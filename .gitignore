@@ -1,0 +1,24 @@
+S generated files
+simv
+simv.daidir/
+csrc/
+vc_hdrs.h
+ucli.key
+*.key
+
+# VCS logs
+*.log
+
+# Verdi generated files
+verdiLog/
+nWaveLog/
+DVFiles/
+
+# Waveform files
+*.fsdb
+*.vpd
+novas.fsdb
+
+# Coverage
+simv.vdb/
+urgReport/
