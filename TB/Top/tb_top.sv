@@ -1,5 +1,13 @@
 `timescale 1ns/1ps
 
+`include "uvm_macros.svh"
+
+import uvm_pkg::*;
+//import axi4_globals_pkg::*;
+//import axi4_slave_pkg::*;
+import axi_fifo_test_pkg::*;
+
+
 module tb_top;
 
   logic clk;

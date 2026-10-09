@@ -35,7 +35,7 @@ class cpu_driver extends uvm_driver #(cpu_sequence_item);
 
     `uvm_info(get_type_name(), $sformatf("[%0t] RUN_PHASE STARTED", $time), UVM_LOW)
 
-    repeat(1) @(fifo_vif.cpu_driver_cb);
+    //repeat(1) @(fifo_vif.cpu_driver_cb);
 
     forever begin
 
