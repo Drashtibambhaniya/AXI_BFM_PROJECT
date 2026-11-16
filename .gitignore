@@ -1,0 +1,14 @@
+# Synopsys VCS generated files
+simv
+simv.*
+csrc/
+ucli.key
+vc_hdrs.h
+DVEfiles/
+verdiLog/
+novas.conf
+*.log
+*.vdb/
+*.vcd
+*.fsdb
+*.cst/
