@@ -11,10 +11,12 @@ package axi_fifo_test_pkg;
   `include "cpu_sequencer.sv"
   `include "cpu_driver.sv"
   `include "cpu_monitor.sv"
+  `include "cpu_passive_monitor.sv"
   `include "cpu_agent.sv"
-
+  `include "virtual_sequencer.sv"
   `include "test_sequence.sv"
-
+  `include "axi_slave_sequence.sv"  
+  `include "virtual_sequence.sv"
   `include "Scoreboard.sv"
   `include "env.sv"
   `include "test.sv"

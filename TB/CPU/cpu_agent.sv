@@ -12,6 +12,7 @@ class cpu_active_agent extends uvm_agent;
   cpu_sequencer seqr;
   cpu_driver    drv;
   cpu_monitor   mon;
+  cpu_passive_monitor pmon;
 
   function new(
     string name = "cpu_active_agent",
@@ -30,6 +31,7 @@ class cpu_active_agent extends uvm_agent;
     seqr = cpu_sequencer::type_id::create("seqr", this);
     drv  = cpu_driver::type_id::create("drv", this);
     mon  = cpu_monitor::type_id::create("mon", this);
+    pmon = cpu_passive_monitor::type_id::create("pmon", this);
 
     `uvm_info(get_type_name(),
       "CPU sequencer, driver and monitor created",

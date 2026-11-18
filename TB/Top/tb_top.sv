@@ -139,7 +139,7 @@ module tb_top;
     uvm_config_db#(virtual fifo_interface.CPU_DRIVER_MP)::set(null, "*", "fifo_vif", fifo_vif);
     uvm_config_db#(virtual fifo_interface.CPU_MON_MP)::set(null, "*", "fifo_vif", fifo_vif);
     uvm_config_db#(virtual axi4_if)::set(null,"*","axi4_if",axi_vif);   
-    $dumpfile("waveform.fsdb");
+    $dumpfile("waveform.vcd");
     $dumpvars;
   end
 

@@ -5,15 +5,26 @@
 # UVM Version: 1.2
 #========================================================
 
-VCS       ?= vcs
-SIM       := simv
-TEST      ?= write_test
-SEED      ?= 1
-FILELIST  := filelist.f
-WAVEFORM  := wave.vcd
+VCS_HOME ?= /hwetools/synosys/installed_tools/vcs/Q-2020.03-SP2-8
+VCS      := $(VCS_HOME)/bin/vcs
+
+SIM      := simv
+TEST     ?= write_test
+SEED     ?= 1
+
+FILELIST := filelist.f
+WAVEFORM := waveform.fsdb
+
+STOP     ?=
+PLUSARGS ?=
+
+RUN_ARGS := +UVM_TESTNAME=$(TEST) \
+            +ntb_random_seed=$(SEED) \
+            $(if $(STOP),+STOP_AFTER_NS=$(STOP)) \
+            $(PLUSARGS)
 
 #========================================================
-# Compiler options
+# VCS Compiler Options
 #========================================================
 
 VCS_FLAGS := -full64 \
@@ -25,7 +36,7 @@ VCS_FLAGS := -full64 \
              -licqueue
 
 #========================================================
-# Default target
+# Targets
 #========================================================
 
 .PHONY: all compile run run_test wave clean help
@@ -40,36 +51,35 @@ compile:
 	$(VCS) $(VCS_FLAGS) -top tb_top -f $(FILELIST) -o $(SIM) -l compile.log
 
 #========================================================
-# Compile and run
+# Compile and Run
 #========================================================
 
 run: compile
-	./$(SIM) +UVM_TESTNAME=$(TEST) +ntb_random_seed=$(SEED) -l run.log
+	./$(SIM) $(RUN_ARGS) -l run.log
 
 #========================================================
-# Run already compiled simulation
+# Run Already Compiled Simulation
 #========================================================
 
 run_test:
-	./$(SIM) +UVM_TESTNAME=$(TEST) +ntb_random_seed=$(SEED) -l run.log
+	./$(SIM) $(RUN_ARGS) -l run.log
 
 #========================================================
-# View Waveforms (Verdi)
+# View VCD Waveform in Verdi
 #========================================================
 
 wave:
 	verdi -vcd $(WAVEFORM) &
 
 #========================================================
-# Clean generated files
+# Clean Generated Files
 #========================================================
 
 clean:
 	rm -rf csrc simv simv.* simv.daidir
 	rm -rf DVEfiles AN.DB
-	rm -f ucli.key vc_hdrs.h
-	rm -f *.log *.vcd *.vpd *.fsdb
-	rm -f novas.conf novas.ics
+	rm -f ucli.key vc_hdrs.h novas.conf novas.ics
+	rm -f *.log *.vpd *.fsdb *.vcd
 
 #========================================================
 # Help

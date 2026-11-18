@@ -90,3 +90,22 @@ class read_test extends base_test;
 endclass
 
 
+class write_read_test extends base_test;
+
+  `uvm_component_utils(write_read_test)
+
+  function new(string name = "write_read_test", uvm_component parent = null);
+    super.new(name, parent);
+  endfunction
+
+  task run_phase(uvm_phase phase);
+    write_read_vseq vseq;
+    phase.raise_objection(this);
+    vseq = write_read_vseq::type_id::create("vseq");
+    vseq.start(env.vseqr);
+    #200ns;
+    phase.drop_objection(this);
+  endtask
+
+endclass
+

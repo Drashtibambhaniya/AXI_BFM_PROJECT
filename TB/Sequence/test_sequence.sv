@@ -86,7 +86,7 @@ class cpu_write_sequence extends cpu_base_sequence;
       0,                  // rd_en
       AW_CH,
       ID_0,
-      BURST_LEN4,
+      BURST_LEN1,
       BYTE4,
       INCR,
       NORMAL_ACCESS,
@@ -125,13 +125,46 @@ class cpu_read_sequence extends cpu_base_sequence;
       NORMAL_ACCESS,
       BUFFERABLE,
       NORMAL_SECURE_DATA,
-      4'b0000
+      4'b0000,
+      32'h0000_1000
       
     );
 
   endtask
 
 endclass : cpu_read_sequence
+
+
+
+//======================================================
+// Write 0x11223344 to 0x1000, then read it back
+//======================================================
+class cpu_write_read_sequence extends cpu_base_sequence;
+
+  `uvm_object_utils(cpu_write_read_sequence)
+
+  function new(string name = "cpu_write_read_sequence");
+    super.new(name);
+  endfunction
+
+  virtual task body();
+    // write request
+    send_transaction(1, 0, AW_CH, ID_0, BURST_LEN1, BYTE4, INCR,
+                     NORMAL_ACCESS, BUFFERABLE, NORMAL_SECURE_DATA,
+                     4'b1111, 32'h0000_1000, 32'h1122_3344);
+    #1us;                                      // give the DUT time to respond
+    send_transaction(0, 1, AR_CH);             // pop write response
+
+    // read request (same address)
+    send_transaction(1, 0, AR_CH, ID_0, BURST_LEN1, BYTE4, INCR,
+                     NORMAL_ACCESS, BUFFERABLE, NORMAL_SECURE_DATA,
+                     4'b0000, 32'h0000_1000);
+    #1us;
+    send_transaction(0, 1, AR_CH);             // pop read response
+  endtask
+
+endclass
+
 
 
 
