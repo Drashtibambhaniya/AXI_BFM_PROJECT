@@ -1,0 +1,4 @@
+  CREATE_STREAM @0 {NAME:vseq T:Transactions SCOPE:uvm_test_top.env.vseqr STREAM:1779}
+  CREATE_STREAM @0 {NAME:cpu_seq T:Transactions SCOPE:uvm_test_top.env.cpu_agent.seqr STREAM:1800}
+  CREATE_STREAM @0 {NAME:slave_wr_seq T:Transactions SCOPE:uvm_test_top.env.axi_slave_agent.axi4_slave_write_seqr_h STREAM:1803}
+  CREATE_STREAM @0 {NAME:slave_rd_seq T:Transactions SCOPE:uvm_test_top.env.axi_slave_agent.axi4_slave_read_seqr_h STREAM:1806}

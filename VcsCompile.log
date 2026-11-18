@@ -1,0 +1,9 @@
+Command: vcs -full64 -sverilog +v2k -debug_access+all -ntb_opts uvm-1.1 +ntb_random_seed_automatic \
++vcs+fsdbon+all -timescale=1ns/1ps -l VcsCompile.log -f filelist.f -top tb_top -o \
+simv
+
+Error-[P1ARGS-CANTOPN-F] Cannot open file
+  Unable to open 'filelist.f' due to 'No such file or directory'.
+  Please fix the reason mentioned above and continue.
+
+CPU time: .124 seconds to compile

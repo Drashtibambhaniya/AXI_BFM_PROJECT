@@ -1,0 +1,885 @@
+Command: /home/drashti/Pictures/AXI_FIFO_BFM_project/Simulation/./simv +UVM_TESTNAME=write_read_test +UVM_VERBOSITY=UVM_MEDIUM -l run.log
+Chronologic VCS simulator copyright 1991-2020
+Contains Synopsys proprietary information.
+Compiler version Q-2020.03-SP2-8_Full64; Runtime version Q-2020.03-SP2-8_Full64;  Nov 18 23:48 2026
+UVM_INFO /hwetools/synosys/installed_tools/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/base/uvm_root.svh(402) @ 0: reporter [UVM/RELNOTES] 
+----------------------------------------------------------------
+UVM-1.2.Synopsys
+(C) 2007-2014 Mentor Graphics Corporation
+(C) 2007-2014 Cadence Design Systems, Inc.
+(C) 2006-2014 Synopsys, Inc.
+(C) 2011-2013 Cypress Semiconductor Corp.
+(C) 2013-2014 NVIDIA Corporation
+----------------------------------------------------------------
+
+  ***********       IMPORTANT RELEASE NOTES         ************
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_NO_DEPRECATED undefined.
+  See http://www.eda.org/svdb/view.php?id=3313 for more details.
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_OBJECT_DO_NOT_NEED_CONSTRUCTOR undefined.
+  See http://www.eda.org/svdb/view.php?id=3770 for more details.
+
+      (Specify +UVM_NO_RELNOTES to turn off this notice)
+
+UVM_INFO ../TB/axi_avip/hdl_top/slave_agent_bfm/axi4_slave_driver_bfm.sv(94) @ 0: reporter [axi4 slave driver bfm] AXI4 SLAVE DRIVER BFM
+UVM_INFO ../TB/axi_avip/hdl_top/slave_agent_bfm/axi4_slave_monitor_bfm.sv(82) @ 0: reporter [axi4 slave monitor bfm] AXI4 SLAVE MONITOR BFM
+UVM_INFO @ 0: reporter [RNTST] Running test write_read_test...
+UVM_INFO ../TB/axi_avip/hdl_top/slave_agent_bfm/axi4_slave_agent_bfm.sv(175) @ 0: reporter [axi4 slave agent bfm] AXI4 SLAVE AGENT BFM
+UVM_INFO ../TB/TEST/test.sv(14) @ 0: uvm_test_top [write_read_test] [0] BASE TEST BUILD_PHASE STARTED
+UVM_INFO ../TB/TEST/test.sv(18) @ 0: uvm_test_top [write_read_test] [0] Environment created
+UVM_INFO ../TB/TEST/test.sv(20) @ 0: uvm_test_top [write_read_test] [0] BASE TEST BUILD_PHASE COMPLETED
+UVM_INFO ../TB/Environment/env.sv(26) @ 0: uvm_test_top.env [environment] [0] BUILD_PHASE STARTED
+UVM_INFO ../TB/Environment/env.sv(50) @ 0: uvm_test_top.env [environment] [0] BUILD_PHASE COMPLETED
+UVM_INFO ../TB/CPU/cpu_agent.sv(27) @ 0: uvm_test_top.env.cpu_agent [cpu_active_agent] BUILD_PHASE STARTED at 0
+UVM_INFO ../TB/CPU/cpu_agent.sv(36) @ 0: uvm_test_top.env.cpu_agent [cpu_active_agent] CPU sequencer, driver and monitor created
+UVM_INFO ../TB/CPU/cpu_agent.sv(40) @ 0: uvm_test_top.env.cpu_agent [cpu_active_agent] BUILD_PHASE COMPLETED at 0
+UVM_INFO ../TB/CPU/cpu_agent.sv(48) @ 0: uvm_test_top.env.cpu_agent [cpu_active_agent] CONNECT_PHASE STARTED at 0
+UVM_INFO ../TB/CPU/cpu_agent.sv(56) @ 0: uvm_test_top.env.cpu_agent [cpu_active_agent] Sequencer connected to driver
+UVM_INFO ../TB/CPU/cpu_agent.sv(60) @ 0: uvm_test_top.env.cpu_agent [cpu_active_agent] CONNECT_PHASE COMPLETED at 0
+UVM_INFO ../TB/Environment/env.sv(70) @ 0: uvm_test_top.env [environment] [0] CONNECT_PHASE COMPLETED
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_driver_proxy.sv(167) @ 0: uvm_test_top.env.axi_slave_agent.axi4_slave_drv_proxy_h [axi4_slave_driver_proxy] Slave driver proxy started - waiting for system reset
+UVM_INFO ../TB/CPU/cpu_driver.sv(41) @ 0: uvm_test_top.env.cpu_agent.drv [cpu_driver] CPU DRIVER STARTED
+UVM_INFO ../TB/CPU/cpu_monitor.sv(45) @ 0: uvm_test_top.env.cpu_agent.mon [cpu_monitor] CPU MONITOR STARTED
+UVM_INFO ../TB/axi_avip/hdl_top/slave_agent_bfm/axi4_slave_driver_bfm.sv(123) @ 5000: reporter [AXI4_SLAVE_DRIVER_BFM] SYSTEM RESET ACTIVATED
+UVM_INFO ../TB/axi_avip/hdl_top/slave_agent_bfm/axi4_slave_driver_bfm.sv(128) @ 15000: reporter [AXI4_SLAVE_DRIVER_BFM] SYSTEM RESET DE-ACTIVATED
+UVM_INFO ../TB/axi_avip/hdl_top/slave_agent_bfm/axi4_slave_driver_bfm.sv(138) @ 15000: reporter [AXI4_SLAVE_DRIVER_BFM] INSIDE WRITE_ADDRESS_PHASE
+UVM_INFO ../TB/axi_avip/hdl_top/slave_agent_bfm/axi4_slave_driver_bfm.sv(187) @ 15000: reporter [AXI4_SLAVE_DRIVER_BFM] INSIDE WRITE DATA CHANNEL
+UVM_INFO ../TB/CPU/cpu_driver.sv(48) @ 15000: uvm_test_top.env.cpu_agent.drv [cpu_driver] Received transaction: wr_en=1 rd_en=0 ch=0 wdata= 11223344
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 25000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=1 rd_en=0 full=0, wdata= aa0000010000480f1122334453000000
+UVM_INFO ../TB/Environment/Scoreboard.sv(192) @ 25000: uvm_test_top.env.sb [SCB] WRITE request : ID=0  ADDR=00001000  DATA=11223344
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 35000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 45000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 55000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 65000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 75000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/axi_avip/hdl_top/slave_agent_bfm/axi4_slave_driver_bfm.sv(149) @ 85000: reporter [SLAVE_DRIVER_WADDR_PHASE] outside of awvalid
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_seq_item_converter.sv(198) @ 85000: reporter [axi4_slave_seq_item_conv_class] Converting write response: input bid = 0
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_driver_proxy.sv(209) @ 85000: uvm_test_top.env.axi_slave_agent.axi4_slave_drv_proxy_h [axi4_slave_driver_proxy] WRITE_ADDRESS_CHANNEL::Received write address packet, awid = 0
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_driver_proxy.sv(399) @ 85000: uvm_test_top.env.axi_slave_agent.axi4_slave_drv_proxy_h [SLAVE_STATUS_CHECK] AFTER_FORK_JOIN_ANY:: SLAVE_ADDRESS_CHANNEL_STATUS =
+ FINISHED
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_driver_proxy.sv(400) @ 85000: uvm_test_top.env.axi_slave_agent.axi4_slave_drv_proxy_h [SLAVE_STATUS_CHECK] AFTER_FORK_JOIN_ANY:: SLAVE_WDATA_CHANNEL_STATUS = 
+ WAITING
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_driver_proxy.sv(401) @ 85000: uvm_test_top.env.axi_slave_agent.axi4_slave_drv_proxy_h [SLAVE_STATUS_CHECK] AFTER_FORK_JOIN_ANY:: SLAVE_WRESP_CHANNEL_STATUS = 
+WAITING
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 85000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_seq_item_converter.sv(198) @ 95000: reporter [axi4_slave_seq_item_conv_class] Converting write response: input bid = 0
+UVM_INFO ../TB/Environment/Scoreboard.sv(278) @ 95000: uvm_test_top.env.sb [SCB_AXI] AW : ID=0 ADDR=00001000 LEN=0 SIZE=2 BURST=1
+UVM_INFO ../TB/axi_avip/hdl_top/slave_agent_bfm/axi4_slave_driver_bfm.sv(138) @ 95000: reporter [AXI4_SLAVE_DRIVER_BFM] INSIDE WRITE_ADDRESS_PHASE
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 95000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/axi_avip/hdl_top/slave_agent_bfm/axi4_slave_driver_bfm.sv(149) @ 105000: reporter [SLAVE_DRIVER_WADDR_PHASE] outside of awvalid
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_seq_item_converter.sv(198) @ 105000: reporter [axi4_slave_seq_item_conv_class] Converting write response: input bid = 0
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_driver_proxy.sv(209) @ 105000: uvm_test_top.env.axi_slave_agent.axi4_slave_drv_proxy_h [axi4_slave_driver_proxy] WRITE_ADDRESS_CHANNEL::Received write address packet, awid = 0
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_driver_proxy.sv(399) @ 105000: uvm_test_top.env.axi_slave_agent.axi4_slave_drv_proxy_h [SLAVE_STATUS_CHECK] AFTER_FORK_JOIN_ANY:: SLAVE_ADDRESS_CHANNEL_STATUS =
+ FINISHED
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_driver_proxy.sv(400) @ 105000: uvm_test_top.env.axi_slave_agent.axi4_slave_drv_proxy_h [SLAVE_STATUS_CHECK] AFTER_FORK_JOIN_ANY:: SLAVE_WDATA_CHANNEL_STATUS = 
+ WAITING
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_driver_proxy.sv(401) @ 105000: uvm_test_top.env.axi_slave_agent.axi4_slave_drv_proxy_h [SLAVE_STATUS_CHECK] AFTER_FORK_JOIN_ANY:: SLAVE_WRESP_CHANNEL_STATUS = 
+WAITING
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 105000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/axi_avip/hdl_top/slave_agent_bfm/axi4_slave_driver_bfm.sv(138) @ 115000: reporter [AXI4_SLAVE_DRIVER_BFM] INSIDE WRITE_ADDRESS_PHASE
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 115000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 125000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 135000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 145000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 155000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 165000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 175000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/CPU/cpu_driver.sv(51) @ 175000: uvm_test_top.env.cpu_agent.drv [cpu_driver] Transaction successfully driven to DUT
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 185000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 195000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 205000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 215000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 225000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 235000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 245000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 255000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 265000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 275000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 285000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 295000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 305000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 315000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 325000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 335000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 345000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 355000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 365000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 375000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 385000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 395000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 405000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 415000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 425000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 435000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 445000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 455000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 465000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 475000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 485000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 495000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 505000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 515000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 525000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 535000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 545000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 555000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 565000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 575000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 585000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 595000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 605000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 615000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 625000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 635000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 645000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 655000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 665000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 675000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 685000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 695000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 705000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 715000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 725000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 735000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 745000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 755000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 765000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 775000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 785000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 795000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 805000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 815000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 825000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 835000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 845000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 855000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 865000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 875000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 885000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 895000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 905000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 915000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 925000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 935000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 945000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 955000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 965000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 975000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 985000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 995000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 1005000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 1015000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 1025000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 1035000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 1045000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 1055000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 1065000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 1075000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 1085000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 1095000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 1105000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 1115000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 1125000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 1135000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 1145000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 1155000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 1165000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/CPU/cpu_driver.sv(48) @ 1175000: uvm_test_top.env.cpu_agent.drv [cpu_driver] Received transaction: wr_en=0 rd_en=1 ch=2 wdata= 0
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 1175000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 1185000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 1195000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 1205000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 1215000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 1225000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 1235000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 1245000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 1255000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 1265000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 1275000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 1285000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 1295000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 1305000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 1315000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 1325000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/CPU/cpu_driver.sv(51) @ 1325000: uvm_test_top.env.cpu_agent.drv [cpu_driver] Transaction successfully driven to DUT
+UVM_INFO ../TB/CPU/cpu_driver.sv(48) @ 1325000: uvm_test_top.env.cpu_agent.drv [cpu_driver] Received transaction: wr_en=1 rd_en=0 ch=2 wdata= 0
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 1335000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=1 rd_en=0 full=0, wdata= aa000001000048000053000000000000
+UVM_INFO ../TB/Environment/Scoreboard.sv(203) @ 1335000: uvm_test_top.env.sb [SCB] READ  request : ID=0  ADDR=00001000  expect DATA=11223344
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 1345000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 1355000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 1365000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 1375000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 1385000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/axi_avip/hdl_top/slave_agent_bfm/axi4_slave_driver_bfm.sv(279) @ 1395000: reporter [SLAVE_DRIVER_RADDR_PHASE] outside of arvalid
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 1395000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_seq_item_converter.sv(282) @ 1405000: reporter [axi4_slave_seq_item_conv_class] Converting read data: rlast = 0
+UVM_INFO ../TB/Environment/Scoreboard.sv(293) @ 1405000: uvm_test_top.env.sb [SCB_AXI] AR : ID=0 ADDR=00001000 LEN=0 SIZE=2 BURST=1
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_seq_item_converter.sv(282) @ 1405000: reporter [axi4_slave_seq_item_conv_class] Converting read data: rlast = 0
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_driver_proxy.sv(527) @ 1405000: uvm_test_top.env.axi_slave_agent.axi4_slave_drv_proxy_h [SLAVE_STATUS_CHECK] AFTER_FORK_JOIN_ANY:: SLAVE_READ_CHANNEL_STATUS = 
+ FINISHED
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_driver_proxy.sv(528) @ 1405000: uvm_test_top.env.axi_slave_agent.axi4_slave_drv_proxy_h [SLAVE_STATUS_CHECK] AFTER_FORK_JOIN_ANY:: SLAVE_RDATA_CHANNEL_STATUS = 
+ WAITING
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 1405000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_driver_proxy.sv(505) @ 1405000: uvm_test_top.env.axi_slave_agent.axi4_slave_drv_proxy_h [axi4_slave_driver_proxy] from_read_class:: struct_read_data_packet = 
+ '{arid:'h0, araddr:'h0, arlen:'h0, arsize:'h0, arburst:'h0, arcache:'h3, arprot:'h7, arqos:'h0, arregion:'h0, aruser:'h0, arlock:'h0, rid:'h0, rdata:'hc060493d70a0305769de397949cb5bbd2bf89359174fac35ac6611a4d91cb5e7243e51ce4076453c, rresp:'h0, ruser:'h0, rlast:'h0, rvalid:'h0, tx_type:'h0, wait_count_read_address_channel:0, wait_count_read_data_channel:0, outstanding_read_tx:0, no_of_wait_states:0}
+UVM_INFO ../TB/axi_avip/hdl_top/slave_agent_bfm/axi4_slave_driver_bfm.sv(279) @ 1415000: reporter [SLAVE_DRIVER_RADDR_PHASE] outside of arvalid
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 1415000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_seq_item_converter.sv(282) @ 1425000: reporter [axi4_slave_seq_item_conv_class] Converting read data: rlast = 1
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_monitor_proxy.sv(255) @ 1425000: uvm_test_top.env.axi_slave_agent.axi4_slave_mon_proxy_h [axi4_slave_monitor_proxy] Packet received from axi4_slave_read_data is 
+ -----------------------------------------------------------------
+Name                 Type           Size  Value                  
+-----------------------------------------------------------------
+tx                   axi4_slave_tx  -     @2857                  
+  tx_type            string         4     READ                   
+  arid               string         6     ARID_0                 
+  araddr             integral       32    'h0                    
+  arlen              integral       4     'd0                    
+  arsize             string         11    READ_1_BYTE            
+  arburst            string         10    READ_FIXED             
+  arlock             string         18    READ_NORMAL_ACCESS     
+  arcache            string         15    READ_BUFFERABLE        
+  arprot             string         23    READ_NORMAL_SECURE_DATA
+  arqos              integral       4     'h0                    
+  rid                string         5     RID_0                  
+  rresp              string         9     READ_OKAY              
+  ruser              integral       4     'h0                    
+  no_of_wait_states  integral       32    'h0                    
+-----------------------------------------------------------------
+
+UVM_INFO ../TB/Environment/Scoreboard.sv(300) @ 1425000: uvm_test_top.env.sb [SCB_AXI] R  : ID=0 DATA=00000000 RESP=0 LAST=1
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_seq_item_converter.sv(282) @ 1425000: reporter [axi4_slave_seq_item_conv_class] Converting read data: rlast = 0
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_driver_proxy.sv(527) @ 1425000: uvm_test_top.env.axi_slave_agent.axi4_slave_drv_proxy_h [SLAVE_STATUS_CHECK] AFTER_FORK_JOIN_ANY:: SLAVE_READ_CHANNEL_STATUS = 
+ FINISHED
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_driver_proxy.sv(528) @ 1425000: uvm_test_top.env.axi_slave_agent.axi4_slave_drv_proxy_h [SLAVE_STATUS_CHECK] AFTER_FORK_JOIN_ANY:: SLAVE_RDATA_CHANNEL_STATUS = 
+ WAITING
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 1425000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_driver_proxy.sv(505) @ 1425000: uvm_test_top.env.axi_slave_agent.axi4_slave_drv_proxy_h [axi4_slave_driver_proxy] from_read_class:: struct_read_data_packet = 
+ '{arid:'h0, araddr:'h1000, arlen:'h0, arsize:'h2, arburst:'h1, arcache:'h1, arprot:'h5, arqos:'h0, arregion:'h0, aruser:'h0, arlock:'h1, rid:'h0, rdata:'h77ef8980764208346d695fdf579a6d25834dbcf64025b2ee9d77da3f8e7636fe, rresp:'h0, ruser:'h0, rlast:'h0, rvalid:'h0, tx_type:'h0, wait_count_read_address_channel:0, wait_count_read_data_channel:0, outstanding_read_tx:0, no_of_wait_states:0}
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 1435000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/axi_avip/hdl_top/slave_agent_bfm/axi4_slave_driver_bfm.sv(279) @ 1445000: reporter [SLAVE_DRIVER_RADDR_PHASE] outside of arvalid
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 1445000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_seq_item_converter.sv(282) @ 1455000: reporter [axi4_slave_seq_item_conv_class] Converting read data: rlast = 0
+UVM_INFO ../TB/Environment/Scoreboard.sv(293) @ 1455000: uvm_test_top.env.sb [SCB_AXI] AR : ID=0 ADDR=00001000 LEN=0 SIZE=2 BURST=1
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_seq_item_converter.sv(282) @ 1455000: reporter [axi4_slave_seq_item_conv_class] Converting read data: rlast = 0
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_driver_proxy.sv(527) @ 1455000: uvm_test_top.env.axi_slave_agent.axi4_slave_drv_proxy_h [SLAVE_STATUS_CHECK] AFTER_FORK_JOIN_ANY:: SLAVE_READ_CHANNEL_STATUS = 
+ FINISHED
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_driver_proxy.sv(528) @ 1455000: uvm_test_top.env.axi_slave_agent.axi4_slave_drv_proxy_h [SLAVE_STATUS_CHECK] AFTER_FORK_JOIN_ANY:: SLAVE_RDATA_CHANNEL_STATUS = 
+ WAITING
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 1455000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/axi_avip/hdl_top/slave_agent_bfm/axi4_slave_driver_bfm.sv(279) @ 1465000: reporter [SLAVE_DRIVER_RADDR_PHASE] outside of arvalid
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 1465000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_seq_item_converter.sv(282) @ 1475000: reporter [axi4_slave_seq_item_conv_class] Converting read data: rlast = 1
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_monitor_proxy.sv(255) @ 1475000: uvm_test_top.env.axi_slave_agent.axi4_slave_mon_proxy_h [axi4_slave_monitor_proxy] Packet received from axi4_slave_read_data is 
+ -----------------------------------------------------------------
+Name                 Type           Size  Value                  
+-----------------------------------------------------------------
+tx                   axi4_slave_tx  -     @2943                  
+  tx_type            string         4     READ                   
+  arid               string         6     ARID_0                 
+  araddr             integral       32    'h0                    
+  arlen              integral       4     'd0                    
+  arsize             string         11    READ_1_BYTE            
+  arburst            string         10    READ_FIXED             
+  arlock             string         18    READ_NORMAL_ACCESS     
+  arcache            string         15    READ_BUFFERABLE        
+  arprot             string         23    READ_NORMAL_SECURE_DATA
+  arqos              integral       4     'h0                    
+  rid                string         5     RID_0                  
+  rresp              string         11    READ_SLVERR            
+  ruser              integral       4     'h0                    
+  no_of_wait_states  integral       32    'h0                    
+-----------------------------------------------------------------
+
+UVM_INFO ../TB/Environment/Scoreboard.sv(300) @ 1475000: uvm_test_top.env.sb [SCB_AXI] R  : ID=0 DATA=00000000 RESP=2 LAST=1
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_seq_item_converter.sv(282) @ 1475000: reporter [axi4_slave_seq_item_conv_class] Converting read data: rlast = 0
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_driver_proxy.sv(527) @ 1475000: uvm_test_top.env.axi_slave_agent.axi4_slave_drv_proxy_h [SLAVE_STATUS_CHECK] AFTER_FORK_JOIN_ANY:: SLAVE_READ_CHANNEL_STATUS = 
+ FINISHED
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_driver_proxy.sv(528) @ 1475000: uvm_test_top.env.axi_slave_agent.axi4_slave_drv_proxy_h [SLAVE_STATUS_CHECK] AFTER_FORK_JOIN_ANY:: SLAVE_RDATA_CHANNEL_STATUS = 
+ WAITING
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 1475000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_driver_proxy.sv(505) @ 1475000: uvm_test_top.env.axi_slave_agent.axi4_slave_drv_proxy_h [axi4_slave_driver_proxy] from_read_class:: struct_read_data_packet = 
+ '{arid:'h0, araddr:'h1000, arlen:'h0, arsize:'h2, arburst:'h1, arcache:'h2, arprot:'h6, arqos:'h0, arregion:'h0, aruser:'h0, arlock:'h1, rid:'h0, rdata:'hbfddb681cab938912a4773dadc27dc6a88e9e277e5281dd58ba875c03b4debfad5c184f8dbba01db5155300113c47cf5af9a5877ebf6f22fbbbe3e5f29cbd736, rresp:'h0, ruser:'h0, rlast:'h0, rvalid:'h0, tx_type:'h0, wait_count_read_address_channel:0, wait_count_read_data_channel:0, outstanding_read_tx:0, no_of_wait_states:0}
+UVM_INFO ../TB/axi_avip/hdl_top/slave_agent_bfm/axi4_slave_driver_bfm.sv(279) @ 1485000: reporter [SLAVE_DRIVER_RADDR_PHASE] outside of arvalid
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 1485000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/CPU/cpu_driver.sv(51) @ 1485000: uvm_test_top.env.cpu_agent.drv [cpu_driver] Transaction successfully driven to DUT
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_seq_item_converter.sv(282) @ 1495000: reporter [axi4_slave_seq_item_conv_class] Converting read data: rlast = 0
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_driver_proxy.sv(527) @ 1495000: uvm_test_top.env.axi_slave_agent.axi4_slave_drv_proxy_h [SLAVE_STATUS_CHECK] AFTER_FORK_JOIN_ANY:: SLAVE_READ_CHANNEL_STATUS = 
+ FINISHED
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_driver_proxy.sv(528) @ 1495000: uvm_test_top.env.axi_slave_agent.axi4_slave_drv_proxy_h [SLAVE_STATUS_CHECK] AFTER_FORK_JOIN_ANY:: SLAVE_RDATA_CHANNEL_STATUS = 
+ WAITING
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 1495000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/axi_avip/hdl_top/slave_agent_bfm/axi4_slave_driver_bfm.sv(279) @ 1505000: reporter [SLAVE_DRIVER_RADDR_PHASE] outside of arvalid
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 1505000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_seq_item_converter.sv(282) @ 1515000: reporter [axi4_slave_seq_item_conv_class] Converting read data: rlast = 0
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_driver_proxy.sv(527) @ 1515000: uvm_test_top.env.axi_slave_agent.axi4_slave_drv_proxy_h [SLAVE_STATUS_CHECK] AFTER_FORK_JOIN_ANY:: SLAVE_READ_CHANNEL_STATUS = 
+ FINISHED
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_driver_proxy.sv(528) @ 1515000: uvm_test_top.env.axi_slave_agent.axi4_slave_drv_proxy_h [SLAVE_STATUS_CHECK] AFTER_FORK_JOIN_ANY:: SLAVE_RDATA_CHANNEL_STATUS = 
+ WAITING
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 1515000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/axi_avip/hdl_top/slave_agent_bfm/axi4_slave_driver_bfm.sv(279) @ 1525000: reporter [SLAVE_DRIVER_RADDR_PHASE] outside of arvalid
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 1525000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_seq_item_converter.sv(282) @ 1535000: reporter [axi4_slave_seq_item_conv_class] Converting read data: rlast = 0
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_driver_proxy.sv(527) @ 1535000: uvm_test_top.env.axi_slave_agent.axi4_slave_drv_proxy_h [SLAVE_STATUS_CHECK] AFTER_FORK_JOIN_ANY:: SLAVE_READ_CHANNEL_STATUS = 
+ FINISHED
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_driver_proxy.sv(528) @ 1535000: uvm_test_top.env.axi_slave_agent.axi4_slave_drv_proxy_h [SLAVE_STATUS_CHECK] AFTER_FORK_JOIN_ANY:: SLAVE_RDATA_CHANNEL_STATUS = 
+ WAITING
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 1535000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/axi_avip/hdl_top/slave_agent_bfm/axi4_slave_driver_bfm.sv(279) @ 1545000: reporter [SLAVE_DRIVER_RADDR_PHASE] outside of arvalid
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 1545000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_seq_item_converter.sv(282) @ 1555000: reporter [axi4_slave_seq_item_conv_class] Converting read data: rlast = 0
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_driver_proxy.sv(527) @ 1555000: uvm_test_top.env.axi_slave_agent.axi4_slave_drv_proxy_h [SLAVE_STATUS_CHECK] AFTER_FORK_JOIN_ANY:: SLAVE_READ_CHANNEL_STATUS = 
+ FINISHED
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_driver_proxy.sv(528) @ 1555000: uvm_test_top.env.axi_slave_agent.axi4_slave_drv_proxy_h [SLAVE_STATUS_CHECK] AFTER_FORK_JOIN_ANY:: SLAVE_RDATA_CHANNEL_STATUS = 
+ WAITING
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 1555000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/axi_avip/hdl_top/slave_agent_bfm/axi4_slave_driver_bfm.sv(279) @ 1565000: reporter [SLAVE_DRIVER_RADDR_PHASE] outside of arvalid
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 1565000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_seq_item_converter.sv(282) @ 1575000: reporter [axi4_slave_seq_item_conv_class] Converting read data: rlast = 0
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_driver_proxy.sv(527) @ 1575000: uvm_test_top.env.axi_slave_agent.axi4_slave_drv_proxy_h [SLAVE_STATUS_CHECK] AFTER_FORK_JOIN_ANY:: SLAVE_READ_CHANNEL_STATUS = 
+ FINISHED
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_driver_proxy.sv(528) @ 1575000: uvm_test_top.env.axi_slave_agent.axi4_slave_drv_proxy_h [SLAVE_STATUS_CHECK] AFTER_FORK_JOIN_ANY:: SLAVE_RDATA_CHANNEL_STATUS = 
+ WAITING
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 1575000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/axi_avip/hdl_top/slave_agent_bfm/axi4_slave_driver_bfm.sv(279) @ 1585000: reporter [SLAVE_DRIVER_RADDR_PHASE] outside of arvalid
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 1585000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_seq_item_converter.sv(282) @ 1595000: reporter [axi4_slave_seq_item_conv_class] Converting read data: rlast = 0
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_driver_proxy.sv(527) @ 1595000: uvm_test_top.env.axi_slave_agent.axi4_slave_drv_proxy_h [SLAVE_STATUS_CHECK] AFTER_FORK_JOIN_ANY:: SLAVE_READ_CHANNEL_STATUS = 
+ FINISHED
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_driver_proxy.sv(528) @ 1595000: uvm_test_top.env.axi_slave_agent.axi4_slave_drv_proxy_h [SLAVE_STATUS_CHECK] AFTER_FORK_JOIN_ANY:: SLAVE_RDATA_CHANNEL_STATUS = 
+ WAITING
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 1595000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/axi_avip/hdl_top/slave_agent_bfm/axi4_slave_driver_bfm.sv(279) @ 1605000: reporter [SLAVE_DRIVER_RADDR_PHASE] outside of arvalid
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 1605000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_seq_item_converter.sv(282) @ 1615000: reporter [axi4_slave_seq_item_conv_class] Converting read data: rlast = 0
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_driver_proxy.sv(527) @ 1615000: uvm_test_top.env.axi_slave_agent.axi4_slave_drv_proxy_h [SLAVE_STATUS_CHECK] AFTER_FORK_JOIN_ANY:: SLAVE_READ_CHANNEL_STATUS = 
+ FINISHED
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_driver_proxy.sv(528) @ 1615000: uvm_test_top.env.axi_slave_agent.axi4_slave_drv_proxy_h [SLAVE_STATUS_CHECK] AFTER_FORK_JOIN_ANY:: SLAVE_RDATA_CHANNEL_STATUS = 
+ WAITING
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 1615000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/axi_avip/hdl_top/slave_agent_bfm/axi4_slave_driver_bfm.sv(279) @ 1625000: reporter [SLAVE_DRIVER_RADDR_PHASE] outside of arvalid
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 1625000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_seq_item_converter.sv(282) @ 1635000: reporter [axi4_slave_seq_item_conv_class] Converting read data: rlast = 0
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_driver_proxy.sv(527) @ 1635000: uvm_test_top.env.axi_slave_agent.axi4_slave_drv_proxy_h [SLAVE_STATUS_CHECK] AFTER_FORK_JOIN_ANY:: SLAVE_READ_CHANNEL_STATUS = 
+ FINISHED
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_driver_proxy.sv(528) @ 1635000: uvm_test_top.env.axi_slave_agent.axi4_slave_drv_proxy_h [SLAVE_STATUS_CHECK] AFTER_FORK_JOIN_ANY:: SLAVE_RDATA_CHANNEL_STATUS = 
+ WAITING
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 1635000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/axi_avip/hdl_top/slave_agent_bfm/axi4_slave_driver_bfm.sv(279) @ 1645000: reporter [SLAVE_DRIVER_RADDR_PHASE] outside of arvalid
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 1645000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_seq_item_converter.sv(282) @ 1655000: reporter [axi4_slave_seq_item_conv_class] Converting read data: rlast = 0
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_driver_proxy.sv(527) @ 1655000: uvm_test_top.env.axi_slave_agent.axi4_slave_drv_proxy_h [SLAVE_STATUS_CHECK] AFTER_FORK_JOIN_ANY:: SLAVE_READ_CHANNEL_STATUS = 
+ FINISHED
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_driver_proxy.sv(528) @ 1655000: uvm_test_top.env.axi_slave_agent.axi4_slave_drv_proxy_h [SLAVE_STATUS_CHECK] AFTER_FORK_JOIN_ANY:: SLAVE_RDATA_CHANNEL_STATUS = 
+ WAITING
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 1655000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/axi_avip/hdl_top/slave_agent_bfm/axi4_slave_driver_bfm.sv(279) @ 1665000: reporter [SLAVE_DRIVER_RADDR_PHASE] outside of arvalid
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 1665000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_seq_item_converter.sv(282) @ 1675000: reporter [axi4_slave_seq_item_conv_class] Converting read data: rlast = 0
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_driver_proxy.sv(527) @ 1675000: uvm_test_top.env.axi_slave_agent.axi4_slave_drv_proxy_h [SLAVE_STATUS_CHECK] AFTER_FORK_JOIN_ANY:: SLAVE_READ_CHANNEL_STATUS = 
+ FINISHED
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_driver_proxy.sv(528) @ 1675000: uvm_test_top.env.axi_slave_agent.axi4_slave_drv_proxy_h [SLAVE_STATUS_CHECK] AFTER_FORK_JOIN_ANY:: SLAVE_RDATA_CHANNEL_STATUS = 
+ WAITING
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 1675000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/axi_avip/hdl_top/slave_agent_bfm/axi4_slave_driver_bfm.sv(279) @ 1685000: reporter [SLAVE_DRIVER_RADDR_PHASE] outside of arvalid
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 1685000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_seq_item_converter.sv(282) @ 1695000: reporter [axi4_slave_seq_item_conv_class] Converting read data: rlast = 0
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_driver_proxy.sv(527) @ 1695000: uvm_test_top.env.axi_slave_agent.axi4_slave_drv_proxy_h [SLAVE_STATUS_CHECK] AFTER_FORK_JOIN_ANY:: SLAVE_READ_CHANNEL_STATUS = 
+ FINISHED
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_driver_proxy.sv(528) @ 1695000: uvm_test_top.env.axi_slave_agent.axi4_slave_drv_proxy_h [SLAVE_STATUS_CHECK] AFTER_FORK_JOIN_ANY:: SLAVE_RDATA_CHANNEL_STATUS = 
+ WAITING
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 1695000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/axi_avip/hdl_top/slave_agent_bfm/axi4_slave_driver_bfm.sv(279) @ 1705000: reporter [SLAVE_DRIVER_RADDR_PHASE] outside of arvalid
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 1705000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_seq_item_converter.sv(282) @ 1715000: reporter [axi4_slave_seq_item_conv_class] Converting read data: rlast = 0
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_driver_proxy.sv(527) @ 1715000: uvm_test_top.env.axi_slave_agent.axi4_slave_drv_proxy_h [SLAVE_STATUS_CHECK] AFTER_FORK_JOIN_ANY:: SLAVE_READ_CHANNEL_STATUS = 
+ FINISHED
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_driver_proxy.sv(528) @ 1715000: uvm_test_top.env.axi_slave_agent.axi4_slave_drv_proxy_h [SLAVE_STATUS_CHECK] AFTER_FORK_JOIN_ANY:: SLAVE_RDATA_CHANNEL_STATUS = 
+ WAITING
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 1715000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/axi_avip/hdl_top/slave_agent_bfm/axi4_slave_driver_bfm.sv(279) @ 1725000: reporter [SLAVE_DRIVER_RADDR_PHASE] outside of arvalid
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 1725000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_seq_item_converter.sv(282) @ 1735000: reporter [axi4_slave_seq_item_conv_class] Converting read data: rlast = 0
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_driver_proxy.sv(527) @ 1735000: uvm_test_top.env.axi_slave_agent.axi4_slave_drv_proxy_h [SLAVE_STATUS_CHECK] AFTER_FORK_JOIN_ANY:: SLAVE_READ_CHANNEL_STATUS = 
+ FINISHED
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_driver_proxy.sv(528) @ 1735000: uvm_test_top.env.axi_slave_agent.axi4_slave_drv_proxy_h [SLAVE_STATUS_CHECK] AFTER_FORK_JOIN_ANY:: SLAVE_RDATA_CHANNEL_STATUS = 
+ WAITING
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 1735000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/axi_avip/hdl_top/slave_agent_bfm/axi4_slave_driver_bfm.sv(279) @ 1745000: reporter [SLAVE_DRIVER_RADDR_PHASE] outside of arvalid
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 1745000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_seq_item_converter.sv(282) @ 1755000: reporter [axi4_slave_seq_item_conv_class] Converting read data: rlast = 0
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_driver_proxy.sv(527) @ 1755000: uvm_test_top.env.axi_slave_agent.axi4_slave_drv_proxy_h [SLAVE_STATUS_CHECK] AFTER_FORK_JOIN_ANY:: SLAVE_READ_CHANNEL_STATUS = 
+ FINISHED
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_driver_proxy.sv(528) @ 1755000: uvm_test_top.env.axi_slave_agent.axi4_slave_drv_proxy_h [SLAVE_STATUS_CHECK] AFTER_FORK_JOIN_ANY:: SLAVE_RDATA_CHANNEL_STATUS = 
+ WAITING
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 1755000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/axi_avip/hdl_top/slave_agent_bfm/axi4_slave_driver_bfm.sv(279) @ 1765000: reporter [SLAVE_DRIVER_RADDR_PHASE] outside of arvalid
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 1765000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_seq_item_converter.sv(282) @ 1775000: reporter [axi4_slave_seq_item_conv_class] Converting read data: rlast = 0
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_driver_proxy.sv(527) @ 1775000: uvm_test_top.env.axi_slave_agent.axi4_slave_drv_proxy_h [SLAVE_STATUS_CHECK] AFTER_FORK_JOIN_ANY:: SLAVE_READ_CHANNEL_STATUS = 
+ FINISHED
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_driver_proxy.sv(528) @ 1775000: uvm_test_top.env.axi_slave_agent.axi4_slave_drv_proxy_h [SLAVE_STATUS_CHECK] AFTER_FORK_JOIN_ANY:: SLAVE_RDATA_CHANNEL_STATUS = 
+ WAITING
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 1775000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/axi_avip/hdl_top/slave_agent_bfm/axi4_slave_driver_bfm.sv(279) @ 1785000: reporter [SLAVE_DRIVER_RADDR_PHASE] outside of arvalid
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 1785000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_seq_item_converter.sv(282) @ 1795000: reporter [axi4_slave_seq_item_conv_class] Converting read data: rlast = 0
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_driver_proxy.sv(527) @ 1795000: uvm_test_top.env.axi_slave_agent.axi4_slave_drv_proxy_h [SLAVE_STATUS_CHECK] AFTER_FORK_JOIN_ANY:: SLAVE_READ_CHANNEL_STATUS = 
+ FINISHED
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_driver_proxy.sv(528) @ 1795000: uvm_test_top.env.axi_slave_agent.axi4_slave_drv_proxy_h [SLAVE_STATUS_CHECK] AFTER_FORK_JOIN_ANY:: SLAVE_RDATA_CHANNEL_STATUS = 
+ WAITING
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 1795000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/axi_avip/hdl_top/slave_agent_bfm/axi4_slave_driver_bfm.sv(279) @ 1805000: reporter [SLAVE_DRIVER_RADDR_PHASE] outside of arvalid
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 1805000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_seq_item_converter.sv(282) @ 1815000: reporter [axi4_slave_seq_item_conv_class] Converting read data: rlast = 0
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_driver_proxy.sv(527) @ 1815000: uvm_test_top.env.axi_slave_agent.axi4_slave_drv_proxy_h [SLAVE_STATUS_CHECK] AFTER_FORK_JOIN_ANY:: SLAVE_READ_CHANNEL_STATUS = 
+ FINISHED
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_driver_proxy.sv(528) @ 1815000: uvm_test_top.env.axi_slave_agent.axi4_slave_drv_proxy_h [SLAVE_STATUS_CHECK] AFTER_FORK_JOIN_ANY:: SLAVE_RDATA_CHANNEL_STATUS = 
+ WAITING
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 1815000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/axi_avip/hdl_top/slave_agent_bfm/axi4_slave_driver_bfm.sv(279) @ 1825000: reporter [SLAVE_DRIVER_RADDR_PHASE] outside of arvalid
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 1825000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_seq_item_converter.sv(282) @ 1835000: reporter [axi4_slave_seq_item_conv_class] Converting read data: rlast = 0
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_driver_proxy.sv(527) @ 1835000: uvm_test_top.env.axi_slave_agent.axi4_slave_drv_proxy_h [SLAVE_STATUS_CHECK] AFTER_FORK_JOIN_ANY:: SLAVE_READ_CHANNEL_STATUS = 
+ FINISHED
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_driver_proxy.sv(528) @ 1835000: uvm_test_top.env.axi_slave_agent.axi4_slave_drv_proxy_h [SLAVE_STATUS_CHECK] AFTER_FORK_JOIN_ANY:: SLAVE_RDATA_CHANNEL_STATUS = 
+ WAITING
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 1835000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/axi_avip/hdl_top/slave_agent_bfm/axi4_slave_driver_bfm.sv(279) @ 1845000: reporter [SLAVE_DRIVER_RADDR_PHASE] outside of arvalid
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 1845000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_seq_item_converter.sv(282) @ 1855000: reporter [axi4_slave_seq_item_conv_class] Converting read data: rlast = 0
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_driver_proxy.sv(527) @ 1855000: uvm_test_top.env.axi_slave_agent.axi4_slave_drv_proxy_h [SLAVE_STATUS_CHECK] AFTER_FORK_JOIN_ANY:: SLAVE_READ_CHANNEL_STATUS = 
+ FINISHED
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_driver_proxy.sv(528) @ 1855000: uvm_test_top.env.axi_slave_agent.axi4_slave_drv_proxy_h [SLAVE_STATUS_CHECK] AFTER_FORK_JOIN_ANY:: SLAVE_RDATA_CHANNEL_STATUS = 
+ WAITING
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 1855000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/axi_avip/hdl_top/slave_agent_bfm/axi4_slave_driver_bfm.sv(279) @ 1865000: reporter [SLAVE_DRIVER_RADDR_PHASE] outside of arvalid
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 1865000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_seq_item_converter.sv(282) @ 1875000: reporter [axi4_slave_seq_item_conv_class] Converting read data: rlast = 0
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_driver_proxy.sv(527) @ 1875000: uvm_test_top.env.axi_slave_agent.axi4_slave_drv_proxy_h [SLAVE_STATUS_CHECK] AFTER_FORK_JOIN_ANY:: SLAVE_READ_CHANNEL_STATUS = 
+ FINISHED
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_driver_proxy.sv(528) @ 1875000: uvm_test_top.env.axi_slave_agent.axi4_slave_drv_proxy_h [SLAVE_STATUS_CHECK] AFTER_FORK_JOIN_ANY:: SLAVE_RDATA_CHANNEL_STATUS = 
+ WAITING
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 1875000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/axi_avip/hdl_top/slave_agent_bfm/axi4_slave_driver_bfm.sv(279) @ 1885000: reporter [SLAVE_DRIVER_RADDR_PHASE] outside of arvalid
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 1885000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_seq_item_converter.sv(282) @ 1895000: reporter [axi4_slave_seq_item_conv_class] Converting read data: rlast = 0
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_driver_proxy.sv(527) @ 1895000: uvm_test_top.env.axi_slave_agent.axi4_slave_drv_proxy_h [SLAVE_STATUS_CHECK] AFTER_FORK_JOIN_ANY:: SLAVE_READ_CHANNEL_STATUS = 
+ FINISHED
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_driver_proxy.sv(528) @ 1895000: uvm_test_top.env.axi_slave_agent.axi4_slave_drv_proxy_h [SLAVE_STATUS_CHECK] AFTER_FORK_JOIN_ANY:: SLAVE_RDATA_CHANNEL_STATUS = 
+ WAITING
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 1895000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/axi_avip/hdl_top/slave_agent_bfm/axi4_slave_driver_bfm.sv(279) @ 1905000: reporter [SLAVE_DRIVER_RADDR_PHASE] outside of arvalid
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 1905000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_seq_item_converter.sv(282) @ 1915000: reporter [axi4_slave_seq_item_conv_class] Converting read data: rlast = 0
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_driver_proxy.sv(527) @ 1915000: uvm_test_top.env.axi_slave_agent.axi4_slave_drv_proxy_h [SLAVE_STATUS_CHECK] AFTER_FORK_JOIN_ANY:: SLAVE_READ_CHANNEL_STATUS = 
+ FINISHED
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_driver_proxy.sv(528) @ 1915000: uvm_test_top.env.axi_slave_agent.axi4_slave_drv_proxy_h [SLAVE_STATUS_CHECK] AFTER_FORK_JOIN_ANY:: SLAVE_RDATA_CHANNEL_STATUS = 
+ WAITING
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 1915000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/axi_avip/hdl_top/slave_agent_bfm/axi4_slave_driver_bfm.sv(279) @ 1925000: reporter [SLAVE_DRIVER_RADDR_PHASE] outside of arvalid
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 1925000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_seq_item_converter.sv(282) @ 1935000: reporter [axi4_slave_seq_item_conv_class] Converting read data: rlast = 0
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_driver_proxy.sv(527) @ 1935000: uvm_test_top.env.axi_slave_agent.axi4_slave_drv_proxy_h [SLAVE_STATUS_CHECK] AFTER_FORK_JOIN_ANY:: SLAVE_READ_CHANNEL_STATUS = 
+ FINISHED
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_driver_proxy.sv(528) @ 1935000: uvm_test_top.env.axi_slave_agent.axi4_slave_drv_proxy_h [SLAVE_STATUS_CHECK] AFTER_FORK_JOIN_ANY:: SLAVE_RDATA_CHANNEL_STATUS = 
+ WAITING
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 1935000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/axi_avip/hdl_top/slave_agent_bfm/axi4_slave_driver_bfm.sv(279) @ 1945000: reporter [SLAVE_DRIVER_RADDR_PHASE] outside of arvalid
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 1945000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_seq_item_converter.sv(282) @ 1955000: reporter [axi4_slave_seq_item_conv_class] Converting read data: rlast = 0
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_driver_proxy.sv(527) @ 1955000: uvm_test_top.env.axi_slave_agent.axi4_slave_drv_proxy_h [SLAVE_STATUS_CHECK] AFTER_FORK_JOIN_ANY:: SLAVE_READ_CHANNEL_STATUS = 
+ FINISHED
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_driver_proxy.sv(528) @ 1955000: uvm_test_top.env.axi_slave_agent.axi4_slave_drv_proxy_h [SLAVE_STATUS_CHECK] AFTER_FORK_JOIN_ANY:: SLAVE_RDATA_CHANNEL_STATUS = 
+ WAITING
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 1955000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/axi_avip/hdl_top/slave_agent_bfm/axi4_slave_driver_bfm.sv(279) @ 1965000: reporter [SLAVE_DRIVER_RADDR_PHASE] outside of arvalid
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 1965000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_seq_item_converter.sv(282) @ 1975000: reporter [axi4_slave_seq_item_conv_class] Converting read data: rlast = 0
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_driver_proxy.sv(527) @ 1975000: uvm_test_top.env.axi_slave_agent.axi4_slave_drv_proxy_h [SLAVE_STATUS_CHECK] AFTER_FORK_JOIN_ANY:: SLAVE_READ_CHANNEL_STATUS = 
+ FINISHED
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_driver_proxy.sv(528) @ 1975000: uvm_test_top.env.axi_slave_agent.axi4_slave_drv_proxy_h [SLAVE_STATUS_CHECK] AFTER_FORK_JOIN_ANY:: SLAVE_RDATA_CHANNEL_STATUS = 
+ WAITING
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 1975000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/axi_avip/hdl_top/slave_agent_bfm/axi4_slave_driver_bfm.sv(279) @ 1985000: reporter [SLAVE_DRIVER_RADDR_PHASE] outside of arvalid
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 1985000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_seq_item_converter.sv(282) @ 1995000: reporter [axi4_slave_seq_item_conv_class] Converting read data: rlast = 0
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_driver_proxy.sv(527) @ 1995000: uvm_test_top.env.axi_slave_agent.axi4_slave_drv_proxy_h [SLAVE_STATUS_CHECK] AFTER_FORK_JOIN_ANY:: SLAVE_READ_CHANNEL_STATUS = 
+ FINISHED
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_driver_proxy.sv(528) @ 1995000: uvm_test_top.env.axi_slave_agent.axi4_slave_drv_proxy_h [SLAVE_STATUS_CHECK] AFTER_FORK_JOIN_ANY:: SLAVE_RDATA_CHANNEL_STATUS = 
+ WAITING
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 1995000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/axi_avip/hdl_top/slave_agent_bfm/axi4_slave_driver_bfm.sv(279) @ 2005000: reporter [SLAVE_DRIVER_RADDR_PHASE] outside of arvalid
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 2005000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_seq_item_converter.sv(282) @ 2015000: reporter [axi4_slave_seq_item_conv_class] Converting read data: rlast = 0
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_driver_proxy.sv(527) @ 2015000: uvm_test_top.env.axi_slave_agent.axi4_slave_drv_proxy_h [SLAVE_STATUS_CHECK] AFTER_FORK_JOIN_ANY:: SLAVE_READ_CHANNEL_STATUS = 
+ FINISHED
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_driver_proxy.sv(528) @ 2015000: uvm_test_top.env.axi_slave_agent.axi4_slave_drv_proxy_h [SLAVE_STATUS_CHECK] AFTER_FORK_JOIN_ANY:: SLAVE_RDATA_CHANNEL_STATUS = 
+ WAITING
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 2015000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/axi_avip/hdl_top/slave_agent_bfm/axi4_slave_driver_bfm.sv(279) @ 2025000: reporter [SLAVE_DRIVER_RADDR_PHASE] outside of arvalid
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 2025000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_seq_item_converter.sv(282) @ 2035000: reporter [axi4_slave_seq_item_conv_class] Converting read data: rlast = 0
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_driver_proxy.sv(527) @ 2035000: uvm_test_top.env.axi_slave_agent.axi4_slave_drv_proxy_h [SLAVE_STATUS_CHECK] AFTER_FORK_JOIN_ANY:: SLAVE_READ_CHANNEL_STATUS = 
+ FINISHED
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_driver_proxy.sv(528) @ 2035000: uvm_test_top.env.axi_slave_agent.axi4_slave_drv_proxy_h [SLAVE_STATUS_CHECK] AFTER_FORK_JOIN_ANY:: SLAVE_RDATA_CHANNEL_STATUS = 
+ WAITING
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 2035000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/axi_avip/hdl_top/slave_agent_bfm/axi4_slave_driver_bfm.sv(279) @ 2045000: reporter [SLAVE_DRIVER_RADDR_PHASE] outside of arvalid
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 2045000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_seq_item_converter.sv(282) @ 2055000: reporter [axi4_slave_seq_item_conv_class] Converting read data: rlast = 0
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_driver_proxy.sv(527) @ 2055000: uvm_test_top.env.axi_slave_agent.axi4_slave_drv_proxy_h [SLAVE_STATUS_CHECK] AFTER_FORK_JOIN_ANY:: SLAVE_READ_CHANNEL_STATUS = 
+ FINISHED
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_driver_proxy.sv(528) @ 2055000: uvm_test_top.env.axi_slave_agent.axi4_slave_drv_proxy_h [SLAVE_STATUS_CHECK] AFTER_FORK_JOIN_ANY:: SLAVE_RDATA_CHANNEL_STATUS = 
+ WAITING
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 2055000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/axi_avip/hdl_top/slave_agent_bfm/axi4_slave_driver_bfm.sv(279) @ 2065000: reporter [SLAVE_DRIVER_RADDR_PHASE] outside of arvalid
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 2065000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_seq_item_converter.sv(282) @ 2075000: reporter [axi4_slave_seq_item_conv_class] Converting read data: rlast = 0
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_driver_proxy.sv(527) @ 2075000: uvm_test_top.env.axi_slave_agent.axi4_slave_drv_proxy_h [SLAVE_STATUS_CHECK] AFTER_FORK_JOIN_ANY:: SLAVE_READ_CHANNEL_STATUS = 
+ FINISHED
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_driver_proxy.sv(528) @ 2075000: uvm_test_top.env.axi_slave_agent.axi4_slave_drv_proxy_h [SLAVE_STATUS_CHECK] AFTER_FORK_JOIN_ANY:: SLAVE_RDATA_CHANNEL_STATUS = 
+ WAITING
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 2075000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/axi_avip/hdl_top/slave_agent_bfm/axi4_slave_driver_bfm.sv(279) @ 2085000: reporter [SLAVE_DRIVER_RADDR_PHASE] outside of arvalid
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 2085000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_seq_item_converter.sv(282) @ 2095000: reporter [axi4_slave_seq_item_conv_class] Converting read data: rlast = 0
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_driver_proxy.sv(527) @ 2095000: uvm_test_top.env.axi_slave_agent.axi4_slave_drv_proxy_h [SLAVE_STATUS_CHECK] AFTER_FORK_JOIN_ANY:: SLAVE_READ_CHANNEL_STATUS = 
+ FINISHED
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_driver_proxy.sv(528) @ 2095000: uvm_test_top.env.axi_slave_agent.axi4_slave_drv_proxy_h [SLAVE_STATUS_CHECK] AFTER_FORK_JOIN_ANY:: SLAVE_RDATA_CHANNEL_STATUS = 
+ WAITING
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 2095000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/axi_avip/hdl_top/slave_agent_bfm/axi4_slave_driver_bfm.sv(279) @ 2105000: reporter [SLAVE_DRIVER_RADDR_PHASE] outside of arvalid
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 2105000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_seq_item_converter.sv(282) @ 2115000: reporter [axi4_slave_seq_item_conv_class] Converting read data: rlast = 0
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_driver_proxy.sv(527) @ 2115000: uvm_test_top.env.axi_slave_agent.axi4_slave_drv_proxy_h [SLAVE_STATUS_CHECK] AFTER_FORK_JOIN_ANY:: SLAVE_READ_CHANNEL_STATUS = 
+ FINISHED
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_driver_proxy.sv(528) @ 2115000: uvm_test_top.env.axi_slave_agent.axi4_slave_drv_proxy_h [SLAVE_STATUS_CHECK] AFTER_FORK_JOIN_ANY:: SLAVE_RDATA_CHANNEL_STATUS = 
+ WAITING
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 2115000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/axi_avip/hdl_top/slave_agent_bfm/axi4_slave_driver_bfm.sv(279) @ 2125000: reporter [SLAVE_DRIVER_RADDR_PHASE] outside of arvalid
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 2125000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_seq_item_converter.sv(282) @ 2135000: reporter [axi4_slave_seq_item_conv_class] Converting read data: rlast = 0
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_driver_proxy.sv(527) @ 2135000: uvm_test_top.env.axi_slave_agent.axi4_slave_drv_proxy_h [SLAVE_STATUS_CHECK] AFTER_FORK_JOIN_ANY:: SLAVE_READ_CHANNEL_STATUS = 
+ FINISHED
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_driver_proxy.sv(528) @ 2135000: uvm_test_top.env.axi_slave_agent.axi4_slave_drv_proxy_h [SLAVE_STATUS_CHECK] AFTER_FORK_JOIN_ANY:: SLAVE_RDATA_CHANNEL_STATUS = 
+ WAITING
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 2135000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/axi_avip/hdl_top/slave_agent_bfm/axi4_slave_driver_bfm.sv(279) @ 2145000: reporter [SLAVE_DRIVER_RADDR_PHASE] outside of arvalid
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 2145000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_seq_item_converter.sv(282) @ 2155000: reporter [axi4_slave_seq_item_conv_class] Converting read data: rlast = 0
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_driver_proxy.sv(527) @ 2155000: uvm_test_top.env.axi_slave_agent.axi4_slave_drv_proxy_h [SLAVE_STATUS_CHECK] AFTER_FORK_JOIN_ANY:: SLAVE_READ_CHANNEL_STATUS = 
+ FINISHED
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_driver_proxy.sv(528) @ 2155000: uvm_test_top.env.axi_slave_agent.axi4_slave_drv_proxy_h [SLAVE_STATUS_CHECK] AFTER_FORK_JOIN_ANY:: SLAVE_RDATA_CHANNEL_STATUS = 
+ WAITING
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 2155000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/axi_avip/hdl_top/slave_agent_bfm/axi4_slave_driver_bfm.sv(279) @ 2165000: reporter [SLAVE_DRIVER_RADDR_PHASE] outside of arvalid
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 2165000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_seq_item_converter.sv(282) @ 2175000: reporter [axi4_slave_seq_item_conv_class] Converting read data: rlast = 0
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_driver_proxy.sv(527) @ 2175000: uvm_test_top.env.axi_slave_agent.axi4_slave_drv_proxy_h [SLAVE_STATUS_CHECK] AFTER_FORK_JOIN_ANY:: SLAVE_READ_CHANNEL_STATUS = 
+ FINISHED
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_driver_proxy.sv(528) @ 2175000: uvm_test_top.env.axi_slave_agent.axi4_slave_drv_proxy_h [SLAVE_STATUS_CHECK] AFTER_FORK_JOIN_ANY:: SLAVE_RDATA_CHANNEL_STATUS = 
+ WAITING
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 2175000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/axi_avip/hdl_top/slave_agent_bfm/axi4_slave_driver_bfm.sv(279) @ 2185000: reporter [SLAVE_DRIVER_RADDR_PHASE] outside of arvalid
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 2185000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_seq_item_converter.sv(282) @ 2195000: reporter [axi4_slave_seq_item_conv_class] Converting read data: rlast = 0
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_driver_proxy.sv(527) @ 2195000: uvm_test_top.env.axi_slave_agent.axi4_slave_drv_proxy_h [SLAVE_STATUS_CHECK] AFTER_FORK_JOIN_ANY:: SLAVE_READ_CHANNEL_STATUS = 
+ FINISHED
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_driver_proxy.sv(528) @ 2195000: uvm_test_top.env.axi_slave_agent.axi4_slave_drv_proxy_h [SLAVE_STATUS_CHECK] AFTER_FORK_JOIN_ANY:: SLAVE_RDATA_CHANNEL_STATUS = 
+ WAITING
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 2195000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/axi_avip/hdl_top/slave_agent_bfm/axi4_slave_driver_bfm.sv(279) @ 2205000: reporter [SLAVE_DRIVER_RADDR_PHASE] outside of arvalid
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 2205000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_seq_item_converter.sv(282) @ 2215000: reporter [axi4_slave_seq_item_conv_class] Converting read data: rlast = 0
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_driver_proxy.sv(527) @ 2215000: uvm_test_top.env.axi_slave_agent.axi4_slave_drv_proxy_h [SLAVE_STATUS_CHECK] AFTER_FORK_JOIN_ANY:: SLAVE_READ_CHANNEL_STATUS = 
+ FINISHED
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_driver_proxy.sv(528) @ 2215000: uvm_test_top.env.axi_slave_agent.axi4_slave_drv_proxy_h [SLAVE_STATUS_CHECK] AFTER_FORK_JOIN_ANY:: SLAVE_RDATA_CHANNEL_STATUS = 
+ WAITING
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 2215000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/axi_avip/hdl_top/slave_agent_bfm/axi4_slave_driver_bfm.sv(279) @ 2225000: reporter [SLAVE_DRIVER_RADDR_PHASE] outside of arvalid
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 2225000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_seq_item_converter.sv(282) @ 2235000: reporter [axi4_slave_seq_item_conv_class] Converting read data: rlast = 0
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_driver_proxy.sv(527) @ 2235000: uvm_test_top.env.axi_slave_agent.axi4_slave_drv_proxy_h [SLAVE_STATUS_CHECK] AFTER_FORK_JOIN_ANY:: SLAVE_READ_CHANNEL_STATUS = 
+ FINISHED
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_driver_proxy.sv(528) @ 2235000: uvm_test_top.env.axi_slave_agent.axi4_slave_drv_proxy_h [SLAVE_STATUS_CHECK] AFTER_FORK_JOIN_ANY:: SLAVE_RDATA_CHANNEL_STATUS = 
+ WAITING
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 2235000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/axi_avip/hdl_top/slave_agent_bfm/axi4_slave_driver_bfm.sv(279) @ 2245000: reporter [SLAVE_DRIVER_RADDR_PHASE] outside of arvalid
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 2245000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_seq_item_converter.sv(282) @ 2255000: reporter [axi4_slave_seq_item_conv_class] Converting read data: rlast = 0
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_driver_proxy.sv(527) @ 2255000: uvm_test_top.env.axi_slave_agent.axi4_slave_drv_proxy_h [SLAVE_STATUS_CHECK] AFTER_FORK_JOIN_ANY:: SLAVE_READ_CHANNEL_STATUS = 
+ FINISHED
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_driver_proxy.sv(528) @ 2255000: uvm_test_top.env.axi_slave_agent.axi4_slave_drv_proxy_h [SLAVE_STATUS_CHECK] AFTER_FORK_JOIN_ANY:: SLAVE_RDATA_CHANNEL_STATUS = 
+ WAITING
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 2255000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/axi_avip/hdl_top/slave_agent_bfm/axi4_slave_driver_bfm.sv(279) @ 2265000: reporter [SLAVE_DRIVER_RADDR_PHASE] outside of arvalid
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 2265000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_seq_item_converter.sv(282) @ 2275000: reporter [axi4_slave_seq_item_conv_class] Converting read data: rlast = 0
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_driver_proxy.sv(527) @ 2275000: uvm_test_top.env.axi_slave_agent.axi4_slave_drv_proxy_h [SLAVE_STATUS_CHECK] AFTER_FORK_JOIN_ANY:: SLAVE_READ_CHANNEL_STATUS = 
+ FINISHED
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_driver_proxy.sv(528) @ 2275000: uvm_test_top.env.axi_slave_agent.axi4_slave_drv_proxy_h [SLAVE_STATUS_CHECK] AFTER_FORK_JOIN_ANY:: SLAVE_RDATA_CHANNEL_STATUS = 
+ WAITING
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 2275000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/axi_avip/hdl_top/slave_agent_bfm/axi4_slave_driver_bfm.sv(279) @ 2285000: reporter [SLAVE_DRIVER_RADDR_PHASE] outside of arvalid
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 2285000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_seq_item_converter.sv(282) @ 2295000: reporter [axi4_slave_seq_item_conv_class] Converting read data: rlast = 0
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_driver_proxy.sv(527) @ 2295000: uvm_test_top.env.axi_slave_agent.axi4_slave_drv_proxy_h [SLAVE_STATUS_CHECK] AFTER_FORK_JOIN_ANY:: SLAVE_READ_CHANNEL_STATUS = 
+ FINISHED
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_driver_proxy.sv(528) @ 2295000: uvm_test_top.env.axi_slave_agent.axi4_slave_drv_proxy_h [SLAVE_STATUS_CHECK] AFTER_FORK_JOIN_ANY:: SLAVE_RDATA_CHANNEL_STATUS = 
+ WAITING
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 2295000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/axi_avip/hdl_top/slave_agent_bfm/axi4_slave_driver_bfm.sv(279) @ 2305000: reporter [SLAVE_DRIVER_RADDR_PHASE] outside of arvalid
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 2305000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_seq_item_converter.sv(282) @ 2315000: reporter [axi4_slave_seq_item_conv_class] Converting read data: rlast = 0
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_driver_proxy.sv(527) @ 2315000: uvm_test_top.env.axi_slave_agent.axi4_slave_drv_proxy_h [SLAVE_STATUS_CHECK] AFTER_FORK_JOIN_ANY:: SLAVE_READ_CHANNEL_STATUS = 
+ FINISHED
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_driver_proxy.sv(528) @ 2315000: uvm_test_top.env.axi_slave_agent.axi4_slave_drv_proxy_h [SLAVE_STATUS_CHECK] AFTER_FORK_JOIN_ANY:: SLAVE_RDATA_CHANNEL_STATUS = 
+ WAITING
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 2315000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/axi_avip/hdl_top/slave_agent_bfm/axi4_slave_driver_bfm.sv(279) @ 2325000: reporter [SLAVE_DRIVER_RADDR_PHASE] outside of arvalid
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 2325000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_seq_item_converter.sv(282) @ 2335000: reporter [axi4_slave_seq_item_conv_class] Converting read data: rlast = 0
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_driver_proxy.sv(527) @ 2335000: uvm_test_top.env.axi_slave_agent.axi4_slave_drv_proxy_h [SLAVE_STATUS_CHECK] AFTER_FORK_JOIN_ANY:: SLAVE_READ_CHANNEL_STATUS = 
+ FINISHED
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_driver_proxy.sv(528) @ 2335000: uvm_test_top.env.axi_slave_agent.axi4_slave_drv_proxy_h [SLAVE_STATUS_CHECK] AFTER_FORK_JOIN_ANY:: SLAVE_RDATA_CHANNEL_STATUS = 
+ WAITING
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 2335000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/axi_avip/hdl_top/slave_agent_bfm/axi4_slave_driver_bfm.sv(279) @ 2345000: reporter [SLAVE_DRIVER_RADDR_PHASE] outside of arvalid
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 2345000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_seq_item_converter.sv(282) @ 2355000: reporter [axi4_slave_seq_item_conv_class] Converting read data: rlast = 0
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_driver_proxy.sv(527) @ 2355000: uvm_test_top.env.axi_slave_agent.axi4_slave_drv_proxy_h [SLAVE_STATUS_CHECK] AFTER_FORK_JOIN_ANY:: SLAVE_READ_CHANNEL_STATUS = 
+ FINISHED
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_driver_proxy.sv(528) @ 2355000: uvm_test_top.env.axi_slave_agent.axi4_slave_drv_proxy_h [SLAVE_STATUS_CHECK] AFTER_FORK_JOIN_ANY:: SLAVE_RDATA_CHANNEL_STATUS = 
+ WAITING
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 2355000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/axi_avip/hdl_top/slave_agent_bfm/axi4_slave_driver_bfm.sv(279) @ 2365000: reporter [SLAVE_DRIVER_RADDR_PHASE] outside of arvalid
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 2365000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_seq_item_converter.sv(282) @ 2375000: reporter [axi4_slave_seq_item_conv_class] Converting read data: rlast = 0
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_driver_proxy.sv(527) @ 2375000: uvm_test_top.env.axi_slave_agent.axi4_slave_drv_proxy_h [SLAVE_STATUS_CHECK] AFTER_FORK_JOIN_ANY:: SLAVE_READ_CHANNEL_STATUS = 
+ FINISHED
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_driver_proxy.sv(528) @ 2375000: uvm_test_top.env.axi_slave_agent.axi4_slave_drv_proxy_h [SLAVE_STATUS_CHECK] AFTER_FORK_JOIN_ANY:: SLAVE_RDATA_CHANNEL_STATUS = 
+ WAITING
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 2375000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/axi_avip/hdl_top/slave_agent_bfm/axi4_slave_driver_bfm.sv(279) @ 2385000: reporter [SLAVE_DRIVER_RADDR_PHASE] outside of arvalid
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 2385000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_seq_item_converter.sv(282) @ 2395000: reporter [axi4_slave_seq_item_conv_class] Converting read data: rlast = 0
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_driver_proxy.sv(527) @ 2395000: uvm_test_top.env.axi_slave_agent.axi4_slave_drv_proxy_h [SLAVE_STATUS_CHECK] AFTER_FORK_JOIN_ANY:: SLAVE_READ_CHANNEL_STATUS = 
+ FINISHED
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_driver_proxy.sv(528) @ 2395000: uvm_test_top.env.axi_slave_agent.axi4_slave_drv_proxy_h [SLAVE_STATUS_CHECK] AFTER_FORK_JOIN_ANY:: SLAVE_RDATA_CHANNEL_STATUS = 
+ WAITING
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 2395000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/axi_avip/hdl_top/slave_agent_bfm/axi4_slave_driver_bfm.sv(279) @ 2405000: reporter [SLAVE_DRIVER_RADDR_PHASE] outside of arvalid
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 2405000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_seq_item_converter.sv(282) @ 2415000: reporter [axi4_slave_seq_item_conv_class] Converting read data: rlast = 0
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_driver_proxy.sv(527) @ 2415000: uvm_test_top.env.axi_slave_agent.axi4_slave_drv_proxy_h [SLAVE_STATUS_CHECK] AFTER_FORK_JOIN_ANY:: SLAVE_READ_CHANNEL_STATUS = 
+ FINISHED
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_driver_proxy.sv(528) @ 2415000: uvm_test_top.env.axi_slave_agent.axi4_slave_drv_proxy_h [SLAVE_STATUS_CHECK] AFTER_FORK_JOIN_ANY:: SLAVE_RDATA_CHANNEL_STATUS = 
+ WAITING
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 2415000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/axi_avip/hdl_top/slave_agent_bfm/axi4_slave_driver_bfm.sv(279) @ 2425000: reporter [SLAVE_DRIVER_RADDR_PHASE] outside of arvalid
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 2425000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_seq_item_converter.sv(282) @ 2435000: reporter [axi4_slave_seq_item_conv_class] Converting read data: rlast = 0
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_driver_proxy.sv(527) @ 2435000: uvm_test_top.env.axi_slave_agent.axi4_slave_drv_proxy_h [SLAVE_STATUS_CHECK] AFTER_FORK_JOIN_ANY:: SLAVE_READ_CHANNEL_STATUS = 
+ FINISHED
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_driver_proxy.sv(528) @ 2435000: uvm_test_top.env.axi_slave_agent.axi4_slave_drv_proxy_h [SLAVE_STATUS_CHECK] AFTER_FORK_JOIN_ANY:: SLAVE_RDATA_CHANNEL_STATUS = 
+ WAITING
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 2435000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/axi_avip/hdl_top/slave_agent_bfm/axi4_slave_driver_bfm.sv(279) @ 2445000: reporter [SLAVE_DRIVER_RADDR_PHASE] outside of arvalid
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 2445000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_seq_item_converter.sv(282) @ 2455000: reporter [axi4_slave_seq_item_conv_class] Converting read data: rlast = 0
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_driver_proxy.sv(527) @ 2455000: uvm_test_top.env.axi_slave_agent.axi4_slave_drv_proxy_h [SLAVE_STATUS_CHECK] AFTER_FORK_JOIN_ANY:: SLAVE_READ_CHANNEL_STATUS = 
+ FINISHED
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_driver_proxy.sv(528) @ 2455000: uvm_test_top.env.axi_slave_agent.axi4_slave_drv_proxy_h [SLAVE_STATUS_CHECK] AFTER_FORK_JOIN_ANY:: SLAVE_RDATA_CHANNEL_STATUS = 
+ WAITING
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 2455000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/axi_avip/hdl_top/slave_agent_bfm/axi4_slave_driver_bfm.sv(279) @ 2465000: reporter [SLAVE_DRIVER_RADDR_PHASE] outside of arvalid
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 2465000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_seq_item_converter.sv(282) @ 2475000: reporter [axi4_slave_seq_item_conv_class] Converting read data: rlast = 0
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_driver_proxy.sv(527) @ 2475000: uvm_test_top.env.axi_slave_agent.axi4_slave_drv_proxy_h [SLAVE_STATUS_CHECK] AFTER_FORK_JOIN_ANY:: SLAVE_READ_CHANNEL_STATUS = 
+ FINISHED
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_driver_proxy.sv(528) @ 2475000: uvm_test_top.env.axi_slave_agent.axi4_slave_drv_proxy_h [SLAVE_STATUS_CHECK] AFTER_FORK_JOIN_ANY:: SLAVE_RDATA_CHANNEL_STATUS = 
+ WAITING
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 2475000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/CPU/cpu_driver.sv(48) @ 2485000: uvm_test_top.env.cpu_agent.drv [cpu_driver] Received transaction: wr_en=0 rd_en=1 ch=2 wdata= 0
+UVM_INFO ../TB/axi_avip/hdl_top/slave_agent_bfm/axi4_slave_driver_bfm.sv(279) @ 2485000: reporter [SLAVE_DRIVER_RADDR_PHASE] outside of arvalid
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 2485000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_seq_item_converter.sv(282) @ 2495000: reporter [axi4_slave_seq_item_conv_class] Converting read data: rlast = 0
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_driver_proxy.sv(527) @ 2495000: uvm_test_top.env.axi_slave_agent.axi4_slave_drv_proxy_h [SLAVE_STATUS_CHECK] AFTER_FORK_JOIN_ANY:: SLAVE_READ_CHANNEL_STATUS = 
+ FINISHED
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_driver_proxy.sv(528) @ 2495000: uvm_test_top.env.axi_slave_agent.axi4_slave_drv_proxy_h [SLAVE_STATUS_CHECK] AFTER_FORK_JOIN_ANY:: SLAVE_RDATA_CHANNEL_STATUS = 
+ WAITING
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 2495000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/axi_avip/hdl_top/slave_agent_bfm/axi4_slave_driver_bfm.sv(279) @ 2505000: reporter [SLAVE_DRIVER_RADDR_PHASE] outside of arvalid
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 2505000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_seq_item_converter.sv(282) @ 2515000: reporter [axi4_slave_seq_item_conv_class] Converting read data: rlast = 0
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_driver_proxy.sv(527) @ 2515000: uvm_test_top.env.axi_slave_agent.axi4_slave_drv_proxy_h [SLAVE_STATUS_CHECK] AFTER_FORK_JOIN_ANY:: SLAVE_READ_CHANNEL_STATUS = 
+ FINISHED
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_driver_proxy.sv(528) @ 2515000: uvm_test_top.env.axi_slave_agent.axi4_slave_drv_proxy_h [SLAVE_STATUS_CHECK] AFTER_FORK_JOIN_ANY:: SLAVE_RDATA_CHANNEL_STATUS = 
+ WAITING
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 2515000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/axi_avip/hdl_top/slave_agent_bfm/axi4_slave_driver_bfm.sv(279) @ 2525000: reporter [SLAVE_DRIVER_RADDR_PHASE] outside of arvalid
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 2525000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_seq_item_converter.sv(282) @ 2535000: reporter [axi4_slave_seq_item_conv_class] Converting read data: rlast = 0
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_driver_proxy.sv(527) @ 2535000: uvm_test_top.env.axi_slave_agent.axi4_slave_drv_proxy_h [SLAVE_STATUS_CHECK] AFTER_FORK_JOIN_ANY:: SLAVE_READ_CHANNEL_STATUS = 
+ FINISHED
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_driver_proxy.sv(528) @ 2535000: uvm_test_top.env.axi_slave_agent.axi4_slave_drv_proxy_h [SLAVE_STATUS_CHECK] AFTER_FORK_JOIN_ANY:: SLAVE_RDATA_CHANNEL_STATUS = 
+ WAITING
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 2535000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/axi_avip/hdl_top/slave_agent_bfm/axi4_slave_driver_bfm.sv(279) @ 2545000: reporter [SLAVE_DRIVER_RADDR_PHASE] outside of arvalid
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 2545000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_seq_item_converter.sv(282) @ 2555000: reporter [axi4_slave_seq_item_conv_class] Converting read data: rlast = 0
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_driver_proxy.sv(527) @ 2555000: uvm_test_top.env.axi_slave_agent.axi4_slave_drv_proxy_h [SLAVE_STATUS_CHECK] AFTER_FORK_JOIN_ANY:: SLAVE_READ_CHANNEL_STATUS = 
+ FINISHED
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_driver_proxy.sv(528) @ 2555000: uvm_test_top.env.axi_slave_agent.axi4_slave_drv_proxy_h [SLAVE_STATUS_CHECK] AFTER_FORK_JOIN_ANY:: SLAVE_RDATA_CHANNEL_STATUS = 
+ WAITING
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 2555000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/axi_avip/hdl_top/slave_agent_bfm/axi4_slave_driver_bfm.sv(279) @ 2565000: reporter [SLAVE_DRIVER_RADDR_PHASE] outside of arvalid
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 2565000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_seq_item_converter.sv(282) @ 2575000: reporter [axi4_slave_seq_item_conv_class] Converting read data: rlast = 0
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_driver_proxy.sv(527) @ 2575000: uvm_test_top.env.axi_slave_agent.axi4_slave_drv_proxy_h [SLAVE_STATUS_CHECK] AFTER_FORK_JOIN_ANY:: SLAVE_READ_CHANNEL_STATUS = 
+ FINISHED
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_driver_proxy.sv(528) @ 2575000: uvm_test_top.env.axi_slave_agent.axi4_slave_drv_proxy_h [SLAVE_STATUS_CHECK] AFTER_FORK_JOIN_ANY:: SLAVE_RDATA_CHANNEL_STATUS = 
+ WAITING
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 2575000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/axi_avip/hdl_top/slave_agent_bfm/axi4_slave_driver_bfm.sv(279) @ 2585000: reporter [SLAVE_DRIVER_RADDR_PHASE] outside of arvalid
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 2585000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_seq_item_converter.sv(282) @ 2595000: reporter [axi4_slave_seq_item_conv_class] Converting read data: rlast = 0
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_driver_proxy.sv(527) @ 2595000: uvm_test_top.env.axi_slave_agent.axi4_slave_drv_proxy_h [SLAVE_STATUS_CHECK] AFTER_FORK_JOIN_ANY:: SLAVE_READ_CHANNEL_STATUS = 
+ FINISHED
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_driver_proxy.sv(528) @ 2595000: uvm_test_top.env.axi_slave_agent.axi4_slave_drv_proxy_h [SLAVE_STATUS_CHECK] AFTER_FORK_JOIN_ANY:: SLAVE_RDATA_CHANNEL_STATUS = 
+ WAITING
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 2595000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/axi_avip/hdl_top/slave_agent_bfm/axi4_slave_driver_bfm.sv(279) @ 2605000: reporter [SLAVE_DRIVER_RADDR_PHASE] outside of arvalid
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 2605000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_seq_item_converter.sv(282) @ 2615000: reporter [axi4_slave_seq_item_conv_class] Converting read data: rlast = 0
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_driver_proxy.sv(527) @ 2615000: uvm_test_top.env.axi_slave_agent.axi4_slave_drv_proxy_h [SLAVE_STATUS_CHECK] AFTER_FORK_JOIN_ANY:: SLAVE_READ_CHANNEL_STATUS = 
+ FINISHED
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_driver_proxy.sv(528) @ 2615000: uvm_test_top.env.axi_slave_agent.axi4_slave_drv_proxy_h [SLAVE_STATUS_CHECK] AFTER_FORK_JOIN_ANY:: SLAVE_RDATA_CHANNEL_STATUS = 
+ WAITING
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 2615000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/axi_avip/hdl_top/slave_agent_bfm/axi4_slave_driver_bfm.sv(279) @ 2625000: reporter [SLAVE_DRIVER_RADDR_PHASE] outside of arvalid
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 2625000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_seq_item_converter.sv(282) @ 2635000: reporter [axi4_slave_seq_item_conv_class] Converting read data: rlast = 0
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_driver_proxy.sv(527) @ 2635000: uvm_test_top.env.axi_slave_agent.axi4_slave_drv_proxy_h [SLAVE_STATUS_CHECK] AFTER_FORK_JOIN_ANY:: SLAVE_READ_CHANNEL_STATUS = 
+ FINISHED
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_driver_proxy.sv(528) @ 2635000: uvm_test_top.env.axi_slave_agent.axi4_slave_drv_proxy_h [SLAVE_STATUS_CHECK] AFTER_FORK_JOIN_ANY:: SLAVE_RDATA_CHANNEL_STATUS = 
+ WAITING
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 2635000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/CPU/cpu_driver.sv(51) @ 2635000: uvm_test_top.env.cpu_agent.drv [cpu_driver] Transaction successfully driven to DUT
+UVM_INFO ../TB/axi_avip/hdl_top/slave_agent_bfm/axi4_slave_driver_bfm.sv(279) @ 2645000: reporter [SLAVE_DRIVER_RADDR_PHASE] outside of arvalid
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 2645000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_seq_item_converter.sv(282) @ 2655000: reporter [axi4_slave_seq_item_conv_class] Converting read data: rlast = 0
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_driver_proxy.sv(527) @ 2655000: uvm_test_top.env.axi_slave_agent.axi4_slave_drv_proxy_h [SLAVE_STATUS_CHECK] AFTER_FORK_JOIN_ANY:: SLAVE_READ_CHANNEL_STATUS = 
+ FINISHED
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_driver_proxy.sv(528) @ 2655000: uvm_test_top.env.axi_slave_agent.axi4_slave_drv_proxy_h [SLAVE_STATUS_CHECK] AFTER_FORK_JOIN_ANY:: SLAVE_RDATA_CHANNEL_STATUS = 
+ WAITING
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 2655000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/axi_avip/hdl_top/slave_agent_bfm/axi4_slave_driver_bfm.sv(279) @ 2665000: reporter [SLAVE_DRIVER_RADDR_PHASE] outside of arvalid
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 2665000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_seq_item_converter.sv(282) @ 2675000: reporter [axi4_slave_seq_item_conv_class] Converting read data: rlast = 0
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_driver_proxy.sv(527) @ 2675000: uvm_test_top.env.axi_slave_agent.axi4_slave_drv_proxy_h [SLAVE_STATUS_CHECK] AFTER_FORK_JOIN_ANY:: SLAVE_READ_CHANNEL_STATUS = 
+ FINISHED
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_driver_proxy.sv(528) @ 2675000: uvm_test_top.env.axi_slave_agent.axi4_slave_drv_proxy_h [SLAVE_STATUS_CHECK] AFTER_FORK_JOIN_ANY:: SLAVE_RDATA_CHANNEL_STATUS = 
+ WAITING
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 2675000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/axi_avip/hdl_top/slave_agent_bfm/axi4_slave_driver_bfm.sv(279) @ 2685000: reporter [SLAVE_DRIVER_RADDR_PHASE] outside of arvalid
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 2685000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_seq_item_converter.sv(282) @ 2695000: reporter [axi4_slave_seq_item_conv_class] Converting read data: rlast = 0
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_driver_proxy.sv(527) @ 2695000: uvm_test_top.env.axi_slave_agent.axi4_slave_drv_proxy_h [SLAVE_STATUS_CHECK] AFTER_FORK_JOIN_ANY:: SLAVE_READ_CHANNEL_STATUS = 
+ FINISHED
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_driver_proxy.sv(528) @ 2695000: uvm_test_top.env.axi_slave_agent.axi4_slave_drv_proxy_h [SLAVE_STATUS_CHECK] AFTER_FORK_JOIN_ANY:: SLAVE_RDATA_CHANNEL_STATUS = 
+ WAITING
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 2695000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/axi_avip/hdl_top/slave_agent_bfm/axi4_slave_driver_bfm.sv(279) @ 2705000: reporter [SLAVE_DRIVER_RADDR_PHASE] outside of arvalid
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 2705000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_seq_item_converter.sv(282) @ 2715000: reporter [axi4_slave_seq_item_conv_class] Converting read data: rlast = 0
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_driver_proxy.sv(527) @ 2715000: uvm_test_top.env.axi_slave_agent.axi4_slave_drv_proxy_h [SLAVE_STATUS_CHECK] AFTER_FORK_JOIN_ANY:: SLAVE_READ_CHANNEL_STATUS = 
+ FINISHED
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_driver_proxy.sv(528) @ 2715000: uvm_test_top.env.axi_slave_agent.axi4_slave_drv_proxy_h [SLAVE_STATUS_CHECK] AFTER_FORK_JOIN_ANY:: SLAVE_RDATA_CHANNEL_STATUS = 
+ WAITING
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 2715000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/axi_avip/hdl_top/slave_agent_bfm/axi4_slave_driver_bfm.sv(279) @ 2725000: reporter [SLAVE_DRIVER_RADDR_PHASE] outside of arvalid
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 2725000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_seq_item_converter.sv(282) @ 2735000: reporter [axi4_slave_seq_item_conv_class] Converting read data: rlast = 0
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_driver_proxy.sv(527) @ 2735000: uvm_test_top.env.axi_slave_agent.axi4_slave_drv_proxy_h [SLAVE_STATUS_CHECK] AFTER_FORK_JOIN_ANY:: SLAVE_READ_CHANNEL_STATUS = 
+ FINISHED
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_driver_proxy.sv(528) @ 2735000: uvm_test_top.env.axi_slave_agent.axi4_slave_drv_proxy_h [SLAVE_STATUS_CHECK] AFTER_FORK_JOIN_ANY:: SLAVE_RDATA_CHANNEL_STATUS = 
+ WAITING
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 2735000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/axi_avip/hdl_top/slave_agent_bfm/axi4_slave_driver_bfm.sv(279) @ 2745000: reporter [SLAVE_DRIVER_RADDR_PHASE] outside of arvalid
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 2745000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_seq_item_converter.sv(282) @ 2755000: reporter [axi4_slave_seq_item_conv_class] Converting read data: rlast = 0
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_driver_proxy.sv(527) @ 2755000: uvm_test_top.env.axi_slave_agent.axi4_slave_drv_proxy_h [SLAVE_STATUS_CHECK] AFTER_FORK_JOIN_ANY:: SLAVE_READ_CHANNEL_STATUS = 
+ FINISHED
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_driver_proxy.sv(528) @ 2755000: uvm_test_top.env.axi_slave_agent.axi4_slave_drv_proxy_h [SLAVE_STATUS_CHECK] AFTER_FORK_JOIN_ANY:: SLAVE_RDATA_CHANNEL_STATUS = 
+ WAITING
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 2755000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/axi_avip/hdl_top/slave_agent_bfm/axi4_slave_driver_bfm.sv(279) @ 2765000: reporter [SLAVE_DRIVER_RADDR_PHASE] outside of arvalid
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 2765000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_seq_item_converter.sv(282) @ 2775000: reporter [axi4_slave_seq_item_conv_class] Converting read data: rlast = 0
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_driver_proxy.sv(527) @ 2775000: uvm_test_top.env.axi_slave_agent.axi4_slave_drv_proxy_h [SLAVE_STATUS_CHECK] AFTER_FORK_JOIN_ANY:: SLAVE_READ_CHANNEL_STATUS = 
+ FINISHED
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_driver_proxy.sv(528) @ 2775000: uvm_test_top.env.axi_slave_agent.axi4_slave_drv_proxy_h [SLAVE_STATUS_CHECK] AFTER_FORK_JOIN_ANY:: SLAVE_RDATA_CHANNEL_STATUS = 
+ WAITING
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 2775000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/axi_avip/hdl_top/slave_agent_bfm/axi4_slave_driver_bfm.sv(279) @ 2785000: reporter [SLAVE_DRIVER_RADDR_PHASE] outside of arvalid
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 2785000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_seq_item_converter.sv(282) @ 2795000: reporter [axi4_slave_seq_item_conv_class] Converting read data: rlast = 0
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_driver_proxy.sv(527) @ 2795000: uvm_test_top.env.axi_slave_agent.axi4_slave_drv_proxy_h [SLAVE_STATUS_CHECK] AFTER_FORK_JOIN_ANY:: SLAVE_READ_CHANNEL_STATUS = 
+ FINISHED
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_driver_proxy.sv(528) @ 2795000: uvm_test_top.env.axi_slave_agent.axi4_slave_drv_proxy_h [SLAVE_STATUS_CHECK] AFTER_FORK_JOIN_ANY:: SLAVE_RDATA_CHANNEL_STATUS = 
+ WAITING
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 2795000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/axi_avip/hdl_top/slave_agent_bfm/axi4_slave_driver_bfm.sv(279) @ 2805000: reporter [SLAVE_DRIVER_RADDR_PHASE] outside of arvalid
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 2805000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_seq_item_converter.sv(282) @ 2815000: reporter [axi4_slave_seq_item_conv_class] Converting read data: rlast = 0
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_driver_proxy.sv(527) @ 2815000: uvm_test_top.env.axi_slave_agent.axi4_slave_drv_proxy_h [SLAVE_STATUS_CHECK] AFTER_FORK_JOIN_ANY:: SLAVE_READ_CHANNEL_STATUS = 
+ FINISHED
+UVM_INFO ../TB/axi_avip/hvl_top/slave/axi4_slave_driver_proxy.sv(528) @ 2815000: uvm_test_top.env.axi_slave_agent.axi4_slave_drv_proxy_h [SLAVE_STATUS_CHECK] AFTER_FORK_JOIN_ANY:: SLAVE_RDATA_CHANNEL_STATUS = 
+ WAITING
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 2815000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO ../TB/axi_avip/hdl_top/slave_agent_bfm/axi4_slave_driver_bfm.sv(279) @ 2825000: reporter [SLAVE_DRIVER_RADDR_PHASE] outside of arvalid
+UVM_INFO ../TB/CPU/cpu_monitor.sv(60) @ 2825000: uvm_test_top.env.cpu_agent.mon [cpu_monitor] Observed DUT activity: wr_en=0 rd_en=0 full=0, wdata= 0
+UVM_INFO /hwetools/synosys/installed_tools/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/base/uvm_objection.svh(1276) @ 2835000: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+UVM_ERROR ../TB/Environment/Scoreboard.sv(315) @ 2835000: uvm_test_top.env.sb [SCB] FAIL : WRITE response ID=0 never received
+UVM_ERROR ../TB/Environment/Scoreboard.sv(315) @ 2835000: uvm_test_top.env.sb [SCB] FAIL : READ response ID=0 never received
+UVM_INFO ../TB/Environment/Scoreboard.sv(327) @ 2835000: uvm_test_top.env.sb [SCB] PASS = 0   FAIL = 2
+UVM_INFO /hwetools/synosys/installed_tools/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/base/uvm_report_server.svh(894) @ 2835000: reporter [UVM/REPORT/SERVER] 
+--- UVM Report Summary ---
+
+** Report counts by severity
+UVM_INFO :  631
+UVM_WARNING :    0
+UVM_ERROR :    2
+UVM_FATAL :    0
+** Report counts by id
+[AXI4_SLAVE_DRIVER_BFM]     6
+[RNTST]     1
+[SCB]     5
+[SCB_AXI]     5
+[SLAVE_DRIVER_RADDR_PHASE]    72
+[SLAVE_DRIVER_WADDR_PHASE]     2
+[SLAVE_STATUS_CHECK]   148
+[TEST_DONE]     1
+[UVM/RELNOTES]     1
+[axi4 slave agent bfm]     1
+[axi4 slave driver bfm]     1
+[axi4 slave monitor bfm]     1
+[axi4_slave_driver_proxy]     6
+[axi4_slave_monitor_proxy]     2
+[axi4_slave_seq_item_conv_class]    78
+[cpu_active_agent]     6
+[cpu_driver]     9
+[cpu_monitor]   282
+[environment]     3
+[write_read_test]     3
+
+$finish called from file "/hwetools/synosys/installed_tools/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/base/uvm_root.svh", line 527.
+$finish at simulation time              2835000
+           V C S   S i m u l a t i o n   R e p o r t 
+Time: 2835000 ps
+CPU Time:      0.990 seconds;       Data structure size:   1.0Mb
+Wed Nov 18 23:48:26 2026

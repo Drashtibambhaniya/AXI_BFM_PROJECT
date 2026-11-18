@@ -1,0 +1,5 @@
+Command Line: /hwetools/synosys/installed_tools/vcs/Q-2020.03-SP2-8/linux64/bin/elabcom -logdir /home/drashti/Pictures/AXI_FIFO_BFM_project/Simulation/simv.daidir/elabcomLog -simvdaidir /home/drashti/Pictures/AXI_FIFO_BFM_project/Simulation/simv.daidir -lib /home/drashti/Pictures/AXI_FIFO_BFM_project/Simulation/simv.daidir/work -saveLevel -elab /home/drashti/Pictures/AXI_FIFO_BFM_project/Simulation/simv.daidir/kdb -simflow -simdir /home/drashti/Pictures/AXI_FIFO_BFM_project/Simulation/simv.daidir/kdb_libs -topfile /home/drashti/Pictures/AXI_FIFO_BFM_project/Simulation/simv.daidir/.elabcomTopFile -ssv -ssy -Lf work +disable_message+C00380+C00381 +disable_message+C00388+C00389
+uname(Linux HweServer.mirafra.com 3.10.0-1160.42.2.el7.x86_64 #1 SMP Tue Sep 7 14:49:57 UTC 2021 x86_64)
+[INFO] error/warning message 'C00388' has been suppressed.
+[INFO] error/warning message 'C00389' has been suppressed.
+au time 1.190095 0.481451 0.067400 delta 113541120 113541120 total 220160000 220160000
