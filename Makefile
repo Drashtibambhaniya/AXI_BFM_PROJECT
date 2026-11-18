@@ -1,170 +1,99 @@
-# ================================================================
-# AXI_FIFO_BFM Verification Makefile
-# ================================================================
+#========================================================
+# Makefile: FIFO-to-AXI4 UVM Verification
+# Simulator: Synopsys VCS
+# UVM Version: 1.2
+#========================================================
 
-.DEFAULT_GOAL := usage
+VCS       ?= vcs
+SIM       := simv
+TEST      ?= write_test
+SEED      ?= 1
+AVIP_DIR := axi4_avip
+FILELIST := files.f
+WAVEFORM  := waveform.fsdb
 
-# ================================================================
-# VCS CONFIGURATION
-# ================================================================
+# Optional run-time switches (both empty by default = normal run, no time limit)
+#   STOP=<ns>       end the run at <ns> and print the scoreboard / UVM summary
+#                   (debug aid for a test that never finishes; a normal test ends before it)
+#   PLUSARGS=...    any extra plusargs, e.g. PLUSARGS=+DUMP to write the waveform
+STOP      ?=
+PLUSARGS  ?=
 
-VCS = vcs
+# plusargs shared by run and run_test
+RUN_ARGS  := +UVM_TESTNAME=$(TEST) +ntb_random_seed=$(SEED) \
+        $(if $(STOP),+STOP_AFTER_NS=$(STOP)) $(PLUSARGS)
 
-VCS_CMD = $(VCS) -full64 -sverilog +v2k \
-          -debug_access+all \
-          -ntb_opts uvm-1.1 \
-          +ntb_random_seed_automatic \
-          +vcs+fsdbon+all \
-          -timescale=1ns/1ps
+#========================================================
+# Compiler options (includes KDB and debug flags for waveforms)
+#========================================================
 
-# ================================================================
-# SIMULATION CONFIGURATION
-# ================================================================
+VCS_FLAGS := -full64 \
+             -sverilog \
+             -ntb_opts uvm-1.2 \
+             -debug_access+all \
+             -timescale=1ns/1ps \
+             -kdb \
+             -licqueue
 
-TEST ?= write_test
-UVM_VERBOSITY ?= UVM_HIGH
+#========================================================
+# Default target
+#========================================================
 
-SIMV = simv
-COMPILE_LOG = VcsCompile.log
-SIM_LOG = $(TEST).log
-FSDB = novas.fsdb
+.PHONY: all compile run run_test wave clean help
 
-# ================================================================
-# ALL
-# ================================================================
+all: compile
 
-all:
-	@$(MAKE) clean
-	@$(MAKE) compile
-	@$(MAKE) simulate TEST=$(TEST) UVM_VERBOSITY=$(UVM_VERBOSITY)
+#========================================================
+# Compile
+#========================================================
 
-# ================================================================
-# COMPILE
-# ================================================================
+compile: $(FILELIST)
+  $(VCS) $(VCS_FLAGS) -f $(FILELIST) -o $(SIM) -l compile.log
 
-compile:
-	@echo ""
-	@echo "================================================================"
-	@echo "                    COMPILATION"
-	@echo "================================================================"
-	@echo ""
-	@echo "Testbench      : AXI_FIFO_BFM"
-	@echo "Top            : tb_top"
-	@echo "Test           : $(TEST)"
-	@echo ""
+#========================================================
+# Compile and run
+#========================================================
 
-	$(VCS_CMD) \
-	-l $(COMPILE_LOG) \
-	-f filelist.f \
-	-top tb_top \
-	-o $(SIMV)
+run: compile
+  ./$(SIM) $(RUN_ARGS) -l run.log
 
-	@echo ""
-	@echo "Compilation completed."
-	@echo "Compile log    : $(COMPILE_LOG)"
-	@echo ""
+#========================================================
+# Run already compiled simulation
+#========================================================
 
-# ================================================================
-# SIMULATE
-# ================================================================
+run_test:
+  ./$(SIM) $(RUN_ARGS) -l run.log
 
-simulate:
-	@echo ""
-	@echo "================================================================"
-	@echo "                    SIMULATION"
-	@echo "================================================================"
-	@echo ""
-	@echo "Test           : $(TEST)"
-	@echo "UVM Verbosity  : $(UVM_VERBOSITY)"
-	@echo ""
-
-	./$(SIMV) \
-	+UVM_TESTNAME=$(TEST) \
-	+UVM_VERBOSITY=$(UVM_VERBOSITY) \
-	-l $(SIM_LOG)
-
-	@echo ""
-	@echo "Simulation completed."
-	@echo "Simulation log : $(SIM_LOG)"
-	@echo "Waveform       : $(FSDB)"
-	@echo ""
-
-# ================================================================
-# WAVEFORM
-# ================================================================
+#========================================================
+# View Waveforms (Verdi)
+#========================================================
 
 wave:
-	@echo ""
-	@echo "================================================================"
-	@echo "                    VERDI WAVEFORM"
-	@echo "================================================================"
-	@echo ""
+  verdi -fsdb $(WAVEFORM) &
 
-	verdi -ssf $(FSDB) &
-
-# ================================================================
-# CLEAN
-# ================================================================
+#========================================================
+# Clean generated files
+#========================================================
 
 clean:
-	@echo ""
-	@echo "Cleaning AXI_FIFO_BFM simulation files..."
-	@echo ""
+  rm -rf csrc simv simv.daidir
+  rm -rf DVEfiles
+  rm -f ucli.key vc_hdrs.h novas.conf novas.ics
+  rm -f *.log *.vpd *.fsdb *.vcd
+  rm -rf AN.DB
 
-	rm -rf csrc \
-	       $(SIMV) \
-	       simv.daidir \
-	       simv.vdb \
-	       verdiLog \
-	       nWaveLog \
-	       $(COMPILE_LOG) \
-	       *.log \
-	       *.fsdb \
-	       *.vpd \
-	       *.key \
-	       *.conf \
-	       novas.rc \
-	       ucli.key \
-	       vc_hdrs.h
+#========================================================
+# Help
+#========================================================
 
-	@echo ""
-	@echo "Clean completed."
-	@echo ""
-
-# ================================================================
-# USAGE
-# ================================================================
-
-usage:
-	@echo ""
-	@echo "================================================================"
-	@echo "                    AXI_FIFO_BFM"
-	@echo "================================================================"
-	@echo ""
-	@echo "Usage:"
-	@echo ""
-	@echo "  make compile"
-	@echo "      Compile the verification environment"
-	@echo ""
-	@echo "  make simulate"
-	@echo "      Run the default test: $(TEST)"
-	@echo ""
-	@echo "  make simulate TEST=write_test"
-	@echo "      Run a specific test"
-	@echo ""
-	@echo "  make simulate TEST=write_test UVM_VERBOSITY=UVM_HIGH"
-	@echo "      Run with detailed UVM messages"
-	@echo ""
-	@echo "  make all"
-	@echo "      Clean + compile + simulate"
-	@echo ""
-	@echo "  make wave"
-	@echo "      Open FSDB waveform in Verdi"
-	@echo ""
-	@echo "  make clean"
-	@echo "      Remove generated simulation files"
-	@echo ""
-	@echo "================================================================"
-	@echo ""
-
-.SILENT:
+help:
+  @echo "make compile"
+  @echo "make run TEST=write_test"
+  @echo "make run TEST=read_test"
+  @echo "make run TEST=write_read_test"
+  @echo "make run_test TEST=directed_write_test"
+  @echo "make run_test TEST=directed_wr_rd_test STOP=20000   (end at 20000 ns, print summary)"
+  @echo "make run_test TEST=directed_write_test PLUSARGS=+DUMP   (write waveform.vcd)"
+  @echo "make wave"
+  @echo "make clean"
+ 

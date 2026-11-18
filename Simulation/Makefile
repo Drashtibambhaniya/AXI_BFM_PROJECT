@@ -1,40 +1,86 @@
-VCS_HOME ?= /hwetools/synosys/installed_tools/vcs/Q-2020.03-SP2-8
-VCS      := $(VCS_HOME)/bin/vcs
-SIMV     := ./simv
-FILELIST := filelist.f
-TOP      := tb_top
+
+#========================================================
+# Makefile: FIFO-to-AXI4 UVM Verification
+# Simulator: Synopsys VCS
+# UVM Version: 1.2
+#========================================================
+
+VCS       ?= vcs
+SIM       := simv
+TEST      ?= write_test
+SEED      ?= 1
+FILELIST  := filelist.f
+WAVEFORM  := wave.vcd
+
+#========================================================
+# Compiler options
+#========================================================
 
 VCS_FLAGS := -full64 \
              -sverilog \
              -ntb_opts uvm-1.2 \
-             -timescale=1ns/1ps \
              -debug_access+all \
+             -timescale=1ns/1ps \
              -kdb \
-             -cm line+cond+tgl+fsm+assert \
-             -top $(TOP) \
-             -o simv
+             -licqueue
 
-.PHONY: all compile run clean help
+#========================================================
+# Default target
+#========================================================
+
+.PHONY: all compile run run_test wave clean help
 
 all: compile
 
+#========================================================
+# Compile
+#========================================================
+
 compile:
-	@test -f "$(FILELIST)" || { echo "ERROR: $(FILELIST) not found. Run make from the Simulation directory."; exit 1; }
-	@test -x "$(VCS)" || { echo "ERROR: VCS executable not found: $(VCS)"; echo "Check VCS_HOME."; exit 1; }
-	$(VCS) $(VCS_FLAGS) -f $(FILELIST) -l compile.log
+	$(VCS) $(VCS_FLAGS) -top tb_top -f $(FILELIST) -o $(SIM) -l compile.log
+
+#========================================================
+# Compile and run
+#========================================================
 
 run: compile
-	./simv +UVM_TESTNAME=write_test +UVM_VERBOSITY=UVM_HIGH -l sim.log
+	./$(SIM) +UVM_TESTNAME=$(TEST) +ntb_random_seed=$(SEED) -l run.log
+
+#========================================================
+# Run already compiled simulation
+#========================================================
+
+run_test:
+	./$(SIM) +UVM_TESTNAME=$(TEST) +ntb_random_seed=$(SEED) -l run.log
+
+#========================================================
+# View Waveforms (Verdi)
+#========================================================
+
+wave:
+	verdi -vcd $(WAVEFORM) &
+
+#========================================================
+# Clean generated files
+#========================================================
 
 clean:
-	rm -rf simv simv.daidir simv.vdb csrc DVEfiles verdiLog novas.conf ucli.key
-	rm -f compile.log sim.log
+	rm -rf csrc simv simv.* simv.daidir
+	rm -rf DVEfiles AN.DB
+	rm -f ucli.key vc_hdrs.h
+	rm -f *.log *.vcd *.vpd *.fsdb
+	rm -f novas.conf novas.ics
+
+#========================================================
+# Help
+#========================================================
 
 help:
-	@echo "Targets:"
-	@echo "  make compile  - Compile the testbench with VCS"
-	@echo "  make run      - Compile and run the simulation"
-	@echo "  make clean    - Remove generated simulation files and logs"
-	@echo "  make help     - Show this help"
-
+	@echo "make compile"
+	@echo "make run TEST=write_test"
+	@echo "make run TEST=read_test"
+	@echo "make run TEST=write_read_test"
+	@echo "make run_test TEST=write_test"
+	@echo "make wave"
+	@echo "make clean"
 

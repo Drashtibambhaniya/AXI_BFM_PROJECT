@@ -2,119 +2,74 @@
 `ifndef TEST_SEQUENCE_SV
 `define TEST_SEQUENCE_SV
 
-`include "uvm_macros.svh"
-import uvm_pkg::*;
-
-//======================================================
-// Base sequence
-//======================================================
 class cpu_base_sequence extends uvm_sequence #(cpu_sequence_item);
 
   `uvm_object_utils(cpu_base_sequence)
+
+  cpu_sequence_item req;
 
   function new(string name = "cpu_base_sequence");
     super.new(name);
   endfunction
 
-  // Reusable transaction submission task.
+//send transacton
   task send_transaction(
-    input bit          wr_en_arg,
-    input bit          rd_en_arg,
-    input channel_e    ch_arg,
-    input txn_id_e     txn_id_arg,
-    input len_e        len_arg,
-    input size_e       size_arg,
-    input burst_e      burst_arg,
-    input bit [31:0]   addr_arg,
-    input bit [3:0]    wstrb_arg,
-    input bit [1023:0] wdata_arg
+    bit wr_en  = 1'b0,
+    bit rd_en  = 1'b0,
+    channel_e ch     = AW_CH,
+    txn_id_e  txn_id = ID_0,
+    len_e     len    = BURST_LEN1,
+    size_e    size   = BYTE1,
+    burst_e   burst  = FIXED,
+    lock_e    lock   = NORMAL_ACCESS,
+    cache_e   cache  = BUFFERABLE,
+    prot_e    prot   = NORMAL_SECURE_DATA,
+    bit [3:0] wstrb  = 4'b0000,
+    bit [`ADR_WID-1:0] addr = '0,
+    bit [`DATA_WID-1:0] wdata = '0
+    
   );
-
-    cpu_sequence_item req;
 
     req = cpu_sequence_item::type_id::create("req");
 
     start_item(req);
 
     if (!req.randomize() with {
-      wr_en  == local::wr_en_arg;
-      rd_en  == local::rd_en_arg;
-
-      ch     == local::ch_arg;
-      txn_id == local::txn_id_arg;
-      len    == local::len_arg;
-      size   == local::size_arg;
-      burst  == local::burst_arg;
-
-      addr   == local::addr_arg;
-      wstrb  == local::wstrb_arg;
-      wdata  == local::wdata_arg;
-
-      // Keep these fields at zero.
-      lock   == lock_e'(0);
-      cache  == cache_e'(0);
-      prot   == prot_e'(0);
+      this.wr_en  == local::wr_en;
+      this.rd_en  == local::rd_en;
+      this.ch     == local::ch;
+      this.txn_id == local::txn_id;
+      this.len    == local::len;
+      this.size   == local::size;
+      this.burst  == local::burst;
+      this.lock   == local::lock;
+      this.cache  == local::cache;
+      this.prot   == local::prot;
+      this.wstrb  == local::wstrb;
+      this.addr  == local::addr;
+      this.wdata == local::wdata;
     }) begin
-      `uvm_fatal("CPU_SEQ",
-        "Failed to randomize cpu_sequence_item")
+      `uvm_fatal(get_type_name(), "Randomization Failed")
     end
 
-    if (wr_en_arg) begin
-
-      // Calculate active payload size after randomization.
-      req.calculate_data_bits();
-
-      // Build the serialized FIFO packet.
-      req.build_fifo_packet();
-
-      if (req.fifo_size == 0) begin
-        `uvm_fatal("CPU_SEQ",
-          "CPU request packet generation failed")
-      end
-    end
-
-    `uvm_info("CPU_SEQ",
-      $sformatf(
-        "Submitting transaction: wr_en=%0b rd_en=%0b ch=%0d addr=0x%08h data_bits=%0d time=%0t",
-        req.wr_en, req.rd_en, req.ch, req.addr,
-        req.data_bits, $time
-      ),
-      UVM_MEDIUM)
+    req.build_fifo_packet();
 
     finish_item(req);
 
   endtask
 
-  //======================================================
-  // Default base sequence
-  //======================================================
   virtual task body();
-
-    bit [1023:0] payload;
-
-    payload = '0;
-    payload[7:0] = 8'hA5;
-
-    send_transaction(
-      1'b1,             // Write request into request FIFO
-      1'b0,             // Do not read response FIFO
-      AW_CH,            // Write-request packet
-      ID_0,             // Transaction ID
-      BURST_LEN1,       // One beat
-      BYTE1,            // One byte per beat
-      FIXED,            // Fixed burst
-      32'h0000_0100,    // Address
-      4'b0001,          // WSTRB
-      payload
-    );
 
   endtask
 
-endclass
+endclass : cpu_base_sequence
+
+
+
 
 
 //======================================================
-// CPU write sequence
+// Directed CPU Write Sequence
 //======================================================
 class cpu_write_sequence extends cpu_base_sequence;
 
@@ -126,36 +81,29 @@ class cpu_write_sequence extends cpu_base_sequence;
 
   virtual task body();
 
-    bit [1023:0] payload;
-
-    payload = '0;
-    payload[127:0] = {
-      32'h0000_0010,
-      32'h0000_000F,
-      32'h0000_000E,
-      32'h0000_000D
-    };
-
     send_transaction(
-      1'b1,
-      1'b0,
+      1,                  // wr_en
+      0,                  // rd_en
       AW_CH,
       ID_0,
       BURST_LEN4,
       BYTE4,
       INCR,
-      32'h0000_0100,
+      NORMAL_ACCESS,
+      BUFFERABLE,
+      NORMAL_SECURE_DATA,
       4'b1111,
-      payload
+      32'h0000_1000,  // address
+      32'h1122_3344   //wdata
     );
 
   endtask
 
-endclass
+endclass : cpu_write_sequence
 
 
 //======================================================
-// CPU read-request sequence
+// CPU Read Sequence
 //======================================================
 class cpu_read_sequence extends cpu_base_sequence;
 
@@ -167,29 +115,26 @@ class cpu_read_sequence extends cpu_base_sequence;
 
   virtual task body();
 
-    bit [1023:0] payload;
-
-    payload = '0;
-
-    // Enqueue a read-address request packet.
-    // The packet builder inserts an 8-bit zero DATA
-    // placeholder and the EOP marker.
     send_transaction(
-      1'b1,             // Write request into request FIFO
-      1'b0,             // No response FIFO read yet
-      AR_CH,            // Read-address request
-      ID_3,             // Transaction ID
-      BURST_LEN4,       // Four beats
-      BYTE4,            // Four bytes per beat
-      INCR,              // Incrementing burst
-      32'h0000_0400,    // Address
-      4'b0000,          // WSTRB is zero for read request
-      payload
+      1, 0,
+      AR_CH,
+      ID_0,
+      BURST_LEN4,
+      BYTE4,
+      INCR,
+      NORMAL_ACCESS,
+      BUFFERABLE,
+      NORMAL_SECURE_DATA,
+      4'b0000
+      
     );
 
   endtask
 
-endclass
+endclass : cpu_read_sequence
+
+
+
 
 `endif
 

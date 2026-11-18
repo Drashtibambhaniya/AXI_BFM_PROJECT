@@ -1,6 +1,7 @@
 package axi_fifo_test_pkg;
 
   `include "uvm_macros.svh"
+  `include "define.sv"
   import uvm_pkg::*;
   import axi4_slave_pkg::*;
 

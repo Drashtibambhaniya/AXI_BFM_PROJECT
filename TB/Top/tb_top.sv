@@ -1,7 +1,7 @@
 `timescale 1ns/1ps
 
+`include "../Packages/define.sv"
 `include "uvm_macros.svh" 
-`include "../RTL/axi_fifo_design.v"
 
 
 import uvm_pkg::*;
@@ -9,7 +9,12 @@ import axi4_globals_pkg::*;
 import axi4_slave_pkg::*;
 import axi_fifo_test_pkg::*;
 
-module top;
+module tb_top;
+
+
+  parameter real CLK_FREQUENCY = `SET_CLK;
+
+  parameter real HALF_PERIOD = 1e9 / ( 2.0 * CLK_FREQUENCY );
 
   bit clk = 0;
   bit ACLK  = 0 ;
@@ -17,10 +22,10 @@ module top;
   bit rstn = 1 ;
   bit ARESETn = 1;
 
-  bit [3:0] wid; // just to declare the wid pin, not useful in axi4 
-  always #5 clk = ~clk;
+  bit [3:0] wid; //not usefull in axi4
 
-  always #5 ACLK = ~ACLK;
+  always #(HALF_PERIOD) clk = ~clk;
+  always #(HALF_PERIOD) ACLK = ~ACLK;
 
   initial begin    
     rstn = 1 ; ARESETn = 1;
@@ -36,7 +41,7 @@ module top;
   // fifo_interface declaration
   fifo_interface#( .FIFO_DATA_WIDTH(`FIFO_DATA_WIDTH) ) fifo_vif ( clk , rstn );
   
-  // Instantiate AVIP's slave BFM Module
+  // Instantiate the VIP's slave BFM Module
   axi4_slave_agent_bfm axi_bfm_slave_wrapper( axi_vif );
 
   // dut instance 
@@ -54,22 +59,24 @@ module top;
     .rsp_wid  (`RSP_WID)
   ) DUT (
 
-    //globals signals
+    //GLOBAL SIGNALS
     .clk(clk),
     .rstn(rstn),
     
     .ACLK(ACLK),
     .ARESETn(ARESETn),
-    //fifo input
+
+    //FIFO INPUT
     .wr_en (fifo_vif.wr_en),
     .rd_en (fifo_vif.rd_en),
-    .wr_data (fifo_vif.wr_data)
-    //fifo output
+    .wr_data (fifo_vif.wr_data),
+
+    //FIFO OUTPUT
     .rd_data (fifo_vif.rd_data),
     .full (fifo_vif.full),
     .empty (fifo_vif.empty),
 
-    // aw input
+    // AW INPUT
     .AWREADY_a (axi_vif.awready),
 
     // W INPUT 
@@ -127,18 +134,18 @@ module top;
 
   );
 
-
   initial begin 
-    uvm_config_db#(virtual fifo_interface)::set(null,"*","fifo_vif",fifo_vif);
+    
+    uvm_config_db#(virtual fifo_interface.CPU_DRIVER_MP)::set(null, "*", "fifo_vif", fifo_vif);
+    uvm_config_db#(virtual fifo_interface.CPU_MON_MP)::set(null, "*", "fifo_vif", fifo_vif);
     uvm_config_db#(virtual axi4_if)::set(null,"*","axi4_if",axi_vif);   
-    $dumpfile("wave.vcd");
+    $dumpfile("waveform.fsdb");
     $dumpvars;
   end
 
   initial begin 
     
-    run_test("write_test");
-
+    run_test();
     #1000000 ; $finish;
   end
 

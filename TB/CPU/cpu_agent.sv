@@ -20,9 +20,6 @@ class cpu_active_agent extends uvm_agent;
     super.new(name, parent);
   endfunction
 
-  //====================================================
-  // BUILD PHASE
-  //====================================================
   function void build_phase(uvm_phase phase);
     super.build_phase(phase);
 
@@ -43,9 +40,6 @@ class cpu_active_agent extends uvm_agent;
       UVM_LOW)
   endfunction
 
-  //====================================================
-  // CONNECT PHASE
-  //====================================================
   function void connect_phase(uvm_phase phase);
     super.connect_phase(phase);
 
@@ -53,11 +47,9 @@ class cpu_active_agent extends uvm_agent;
       $sformatf("CONNECT_PHASE STARTED at %0t", $time),
       UVM_LOW)
 
-    // Connect sequence items from sequencer to driver.
+    // connect sequencer to driver.
     drv.seq_item_port.connect(seqr.seq_item_export);
-
-    // The monitor analysis port is available for a future
-    // scoreboard or analysis subscriber connection.
+    
 
     `uvm_info(get_type_name(),
       "Sequencer connected to driver",

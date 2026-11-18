@@ -63,6 +63,7 @@ class environment extends uvm_env;
     `uvm_info(get_type_name(), $sformatf("[%0t] CONNECT_PHASE STARTED", $time), UVM_LOW)
      cpu_agent.mon.analysis_port.connect(sb.cpu_imp);
 
+
      axi_slave_agent.axi4_slave_mon_proxy_h.axi4_slave_write_address_analysis_port.connect(sb.aw_imp);
      
      axi_slave_agent.axi4_slave_mon_proxy_h.axi4_slave_write_data_analysis_port.connect(sb.w_imp);
