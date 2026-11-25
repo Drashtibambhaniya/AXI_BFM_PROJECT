@@ -1,0 +1,14 @@
+csrc/
+simv
+simv.daidir/
+*.log
+*.fsdb
+*.vcd
+verdiLog/
+ucli.key
+vc_hdrs.h
+novas.*
+AN.DB/
+DVEfiles/
+.git_backup/
+*.tgz
